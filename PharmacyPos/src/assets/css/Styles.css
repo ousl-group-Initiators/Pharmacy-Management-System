@@ -1,0 +1,99 @@
+.font{
+    -fx-font-family: "Roboto", "Segoe UI", sans-serif;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.heading{
+    -fx-font-family: "Roboto", "Segoe UI", sans-serif;
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+}
+
+.normal_font{
+    -fx-font-family: "Roboto", "Segoe UI", sans-serif;
+    -fx-font-size: 16px;
+}
+
+.dashboard_button_color{
+    -fx-background-color: #f7f7f8;
+    -fx-font-family: "Roboto", "Segoe UI", sans-serif;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.dashboard_button{
+    -fx-background-color: #ffff;
+    -fx-font-family: "Roboto", "Segoe UI", sans-serif;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.dashboard_pane{
+    -fx-border-radius: 10px;
+    -fx-border-width: 2px;
+    -fx-border-color: green;
+}
+
+.dashboard_pane1{
+    -fx-border-radius: 10px;
+    -fx-border-width: 2px;
+    -fx-border-color: red;
+}
+
+.dashboard_pane2{
+    -fx-border-radius: 10px;
+    -fx-border-width: 2px;
+    -fx-border-color: #2f5a9a;
+}
+
+.billing_dashboard_button{
+    -fx-background-color: red;
+    -fx-font-family: "Roboto", "Segoe UI", sans-serif;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-border-radius: 10px;
+}
+
+.billing_dashboard_numbers{
+    -fx-font-family: "Roboto", "Segoe UI", sans-serif;
+    -fx-font-size: 40px;
+    -fx-font-weight: bold;
+}
+
+.dashboard_pane_button{
+    -fx-background-color: #f7f7f8;
+    -fx-font-family: "Roboto", "Segoe UI", sans-serif;
+    -fx-font-size: 16px;
+    -fx-border-radius: 10px;
+}
+
+.textField{
+    -fx-font-family: "Roboto", "Segoe UI", sans-serif;
+    -fx-font-size: 14px;
+    -fx-focus-color: #419043;
+}
+
+.addButton{
+    -fx-font-family: "Roboto", "Segoe UI", sans-serif;
+    -fx-font-size: 14px;
+    -fx-background-color: #4CAF50;
+    -fx-border-radius: 10px;
+    -fx-font-weight: bold;
+}
+
+.updateButton{
+    -fx-font-family: "Roboto", "Segoe UI", sans-serif;
+    -fx-font-size: 14px;
+    -fx-background-color: #2196F3;
+    -fx-border-radius: 10px;
+    -fx-font-weight: bold;
+}
+
+.deleteButton{
+    -fx-font-family: "Roboto", "Segoe UI", sans-serif;
+    -fx-font-size: 14px;
+    -fx-background-color: #FF0000;
+    -fx-border-radius: 10px;
+    -fx-font-weight: bold;
+}
