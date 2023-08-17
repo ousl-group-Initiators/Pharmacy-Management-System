@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.MotionBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ousl.initiators.pos.controller.MainContextController">
+   <children>
+      <BorderPane layoutX="75.0" layoutY="105.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <Pane prefHeight="60.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Separator prefWidth="1366.0" />
+                  <Separator layoutY="60.0" prefWidth="1366.0" />
+                  <Separator layoutX="268.0" orientation="VERTICAL" prefHeight="60.0" />
+                  <ImageView fitHeight="55.0" fitWidth="55.0" layoutX="105.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                     <viewport>
+                        <Rectangle2D />
+                     </viewport>
+                     <image>
+                        <Image url="@../../../../../assets/images/logo.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="300.0" layoutY="25.0" styleClass="normal_font" stylesheets="@../../../../../assets/css/Styles.css" text="Admin Login" />
+                  <Label fx:id="lblDateTime" layoutX="1170.0" layoutY="18.0" styleClass="normal_font" stylesheets="@../../../../../assets/css/Styles.css" text="2023-08-16  |  00:00" />
+               </children></Pane>
+         </top>
+         <left>
+            <ScrollPane prefHeight="200.0" prefWidth="270.0" BorderPane.alignment="CENTER">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="660.0" prefWidth="268.0">
+                     <children>
+                        <Pane prefHeight="65.0" style="-fx-background-color: #ffffff;" />
+                        <JFXButton alignment="CENTER_RIGHT" graphicTextGap="20.0" layoutY="65.0" onAction="#dashboardOnAction" prefHeight="65.0" prefWidth="270.0" styleClass="dashboard_button_color" stylesheets="@../../../../../assets/css/Styles.css" text="Dashboard                    ">
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../assets/images/Dashboard.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <MotionBlur radius="15.0" />
+                           </effect>
+                        </JFXButton>
+                        <JFXButton alignment="CENTER_RIGHT" graphicTextGap="25.0" layoutY="130.0" onAction="#manageEmployeeOnAction" prefHeight="65.0" prefWidth="270.0" styleClass="dashboard_button" stylesheets="@../../../../../assets/css/Styles.css" text="Manage Employee       ">
+                           <graphic>
+                              <ImageView fitHeight="38.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../assets/images/ManageEmployee.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <MotionBlur radius="15.0" />
+                           </effect>
+                        </JFXButton>
+                        <JFXButton alignment="CENTER_RIGHT" graphicTextGap="25.0" layoutY="195.0" onAction="#manageSuppliersOnAction" prefHeight="65.0" prefWidth="270.0" styleClass="dashboard_button_color" stylesheets="@../../../../../assets/css/Styles.css" text="Manage Suppliers        ">
+                           <graphic>
+                              <ImageView fitHeight="35.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../assets/images/ManageSuppliers.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <MotionBlur radius="15.0" />
+                           </effect>
+                        </JFXButton>
+                        <JFXButton alignment="CENTER_RIGHT" graphicTextGap="25.0" layoutY="260.0" onAction="#manageItemsOnAction" prefHeight="65.0" prefWidth="270.0" styleClass="dashboard_button" stylesheets="@../../../../../assets/css/Styles.css" text="Manage Items              ">
+                           <graphic>
+                              <ImageView fitHeight="40.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../assets/images/icons8-buy-96.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <MotionBlur radius="15.0" />
+                           </effect>
+                        </JFXButton>
+                        <JFXButton alignment="CENTER_RIGHT" graphicTextGap="25.0" layoutY="325.0" onAction="#manageDrugsOnAction" prefHeight="65.0" prefWidth="270.0" styleClass="dashboard_button_color" stylesheets="@../../../../../assets/css/Styles.css" text="Manage Drugs             ">
+                           <graphic>
+                              <ImageView fitHeight="38.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../assets/images/ManageDrugs.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <MotionBlur radius="15.0" />
+                           </effect>
+                        </JFXButton>
+                        <JFXButton alignment="CENTER_RIGHT" graphicTextGap="25.0" layoutY="389.0" onAction="#manageInventoryOnAction" prefHeight="65.0" prefWidth="270.0" styleClass="dashboard_button" stylesheets="@../../../../../assets/css/Styles.css" text="Inventory                     ">
+                           <graphic>
+                              <ImageView fitHeight="38.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../assets/images/Inventory.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <MotionBlur radius="15.0" />
+                           </effect>
+                        </JFXButton>
+                        <JFXButton alignment="CENTER_RIGHT" graphicTextGap="22.0" layoutY="454.0" onAction="#reportsOnAction" prefHeight="65.0" prefWidth="270.0" styleClass="dashboard_button_color" stylesheets="@../../../../../assets/css/Styles.css" text="Reports                        ">
+                           <graphic>
+                              <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../assets/images/Reports.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <MotionBlur radius="15.0" />
+                           </effect>
+                        </JFXButton>
+                        <JFXButton alignment="CENTER_RIGHT" graphicTextGap="26.0" layoutY="519.0" onAction="#backupsOnAction" prefHeight="65.0" prefWidth="270.0" styleClass="dashboard_button" stylesheets="@../../../../../assets/css/Styles.css" text="Backups                       ">
+                           <graphic>
+                              <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../assets/images/Backups.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <MotionBlur radius="15.0" />
+                           </effect>
+                        </JFXButton>
+                        <JFXButton alignment="CENTER_RIGHT" graphicTextGap="26.0" layoutY="584.0" onAction="#logoutOnAction" prefHeight="65.0" prefWidth="270.0" styleClass="dashboard_button_color" stylesheets="@../../../../../assets/css/Styles.css" text="Logout                         " textFill="#d00000">
+                           <graphic>
+                              <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../assets/images/LogOut.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <MotionBlur radius="15.0" />
+                           </effect>
+                        </JFXButton>
+                        <Separator layoutX="270.0" orientation="VERTICAL" prefHeight="686.0" />
+                        <Label layoutX="61.0" layoutY="10.0" styleClass="heading" stylesheets="@../../../../../assets/css/Styles.css" text="WELCOME" textFill="#419043" />
+                        <Separator layoutY="65.0" prefWidth="270.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </ScrollPane>
+         </left>
+         <center>
+            <AnchorPane fx:id="mainContext" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
