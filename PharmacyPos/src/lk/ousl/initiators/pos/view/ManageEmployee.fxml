@@ -4,50 +4,45 @@
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import com.jfoenix.controls.JFXTextField?>
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
 <AnchorPane fx:id="manageEmployeeContext" prefHeight="708.0" prefWidth="1096.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ousl.initiators.pos.controller.ManageEmployeeController">
    <children>
-      <JFXTextField focusColor="#419043" labelFloat="true" layoutX="28.0" layoutY="268.0" prefHeight="30.0" prefWidth="300.0" promptText="Last Name" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
+      <JFXTextField focusColor="#419043" labelFloat="true" layoutX="28.0" layoutY="210.0" prefHeight="30.0" prefWidth="300.0" promptText="Last Name" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
       <Pane prefHeight="65.0" AnchorPane.bottomAnchor="643.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Separator layoutY="65.0" prefWidth="1096.0" />
             <Label layoutX="28.0" layoutY="10.0" styleClass="heading" stylesheets="@../../../../../assets/css/Styles.css" text="Manage Employees" />
          </children>
       </Pane>
-      <JFXTextField focusColor="#419043" labelFloat="true" layoutX="774.0" layoutY="91.0" prefHeight="30.0" prefWidth="300.0" promptText="Search Employees" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </JFXTextField>
-      <JFXTextField focusColor="#419043" labelFloat="true" layoutX="28.0" layoutY="148.0" prefHeight="30.0" prefWidth="300.0" promptText="Employee Id" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
-      <JFXTextField focusColor="#419043" labelFloat="true" layoutX="398.0" layoutY="149.0" prefHeight="30.0" prefWidth="300.0" promptText="Age" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
-      <JFXTextField focusColor="#419043" labelFloat="true" layoutX="28.0" layoutY="208.0" prefHeight="30.0" prefWidth="300.0" promptText="First Name" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
-      <JFXTextField focusColor="#419043" labelFloat="true" layoutX="398.0" layoutY="208.0" prefHeight="30.0" prefWidth="300.0" promptText="Telephone No" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
-      <DatePicker layoutX="28.0" layoutY="333.0" prefHeight="30.0" prefWidth="300.0" promptText="Date of Birth" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
-      <JFXTextArea focusColor="#419043" labelFloat="true" layoutX="398.0" layoutY="267.0" prefHeight="87.0" prefWidth="300.0" promptText="Address" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
-      <JFXComboBox focusColor="#419043" layoutX="760.0" layoutY="152.0" prefWidth="300.0" promptText="Job Role" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
-      <JFXTextArea focusColor="#419043" labelFloat="true" layoutX="760.0" layoutY="209.0" prefHeight="145.0" prefWidth="300.0" promptText="Description Add Here" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
-      <JFXButton layoutX="28.0" layoutY="383.0" prefHeight="40.0" prefWidth="120.0" styleClass="addButton" stylesheets="@../../../../../assets/css/Styles.css" text="ADD" textFill="WHITE" />
-      <JFXButton layoutX="159.0" layoutY="383.0" prefHeight="40.0" prefWidth="120.0" styleClass="updateButton" stylesheets="@../../../../../assets/css/Styles.css" text="UPDATE" textFill="WHITE" />
-      <JFXButton layoutX="292.0" layoutY="383.0" prefHeight="40.0" prefWidth="120.0" styleClass="deleteButton" stylesheets="@../../../../../assets/css/Styles.css" text="DELETE" textFill="WHITE" />
-      <TableView layoutX="28.0" layoutY="441.0" prefHeight="235.0" prefWidth="1035.0">
+      <JFXTextField focusColor="#419043" labelFloat="true" layoutX="28.0" layoutY="90.0" prefHeight="30.0" prefWidth="300.0" promptText="Employee NIC Number" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
+      <JFXTextField focusColor="#419043" labelFloat="true" layoutX="398.0" layoutY="91.0" prefHeight="30.0" prefWidth="300.0" promptText="Age" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
+      <JFXTextField focusColor="#419043" labelFloat="true" layoutX="28.0" layoutY="150.0" prefHeight="30.0" prefWidth="300.0" promptText="First Name" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
+      <JFXTextField focusColor="#419043" labelFloat="true" layoutX="398.0" layoutY="150.0" prefHeight="30.0" prefWidth="300.0" promptText="Telephone No" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
+      <DatePicker layoutX="28.0" layoutY="275.0" prefHeight="30.0" prefWidth="300.0" promptText="Date of Birth" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
+      <JFXTextArea focusColor="#419043" labelFloat="true" layoutX="398.0" layoutY="209.0" prefHeight="87.0" prefWidth="300.0" promptText="Address" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
+      <JFXComboBox focusColor="#419043" layoutX="760.0" layoutY="94.0" prefWidth="300.0" promptText="Job Role" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
+      <JFXTextArea focusColor="#419043" labelFloat="true" layoutX="760.0" layoutY="151.0" prefHeight="145.0" prefWidth="300.0" promptText="Description Add Here" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
+      <JFXButton layoutX="860.0" layoutY="339.0" prefHeight="40.0" prefWidth="200.0" styleClass="addButton" stylesheets="@../../../../../assets/css/Styles.css" text="Save Employee" textFill="WHITE" />
+      <JFXButton layoutX="648.0" layoutY="339.0" prefHeight="40.0" prefWidth="200.0" styleClass="updateButton" stylesheets="@../../../../../assets/css/Styles.css" text="+ New Employee" textFill="WHITE" />
+      <TableView layoutX="28.0" layoutY="413.0" prefHeight="265.0" prefWidth="1035.0">
         <columns>
-          <TableColumn prefWidth="95.0" text="Employee Id" />
-          <TableColumn prefWidth="241.0" text="Name" />
+          <TableColumn prefWidth="104.0" text="Employee NIC" />
+          <TableColumn prefWidth="232.0" text="Name" />
             <TableColumn prefWidth="132.0" text="DOB" />
-            <TableColumn prefWidth="87.0" text="Age" />
             <TableColumn prefWidth="146.0" text="Telephone Number" />
             <TableColumn minWidth="0.0" prefWidth="225.0" text="Address" />
             <TableColumn minWidth="0.0" prefWidth="108.0" text="Job Role" />
+            <TableColumn minWidth="0.0" prefWidth="87.0" text="Option" />
         </columns>
       </TableView>
+      <TextField layoutX="28.0" layoutY="339.0" prefHeight="40.0" prefWidth="595.0" promptText="Search Employee" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
    </children>
 </AnchorPane>
