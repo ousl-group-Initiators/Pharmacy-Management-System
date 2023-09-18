@@ -20,6 +20,7 @@
          <children>
             <Separator layoutY="65.0" prefWidth="1096.0" />
             <Label layoutX="28.0" layoutY="10.0" styleClass="heading" stylesheets="@../../../../../assets/css/Styles.css" text="Manage Employees" />
+            <Separator prefWidth="1096.0" />
          </children>
       </Pane>
       <JFXTextField focusColor="#419043" labelFloat="true" layoutX="28.0" layoutY="90.0" prefHeight="30.0" prefWidth="300.0" promptText="Employee NIC Number" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
