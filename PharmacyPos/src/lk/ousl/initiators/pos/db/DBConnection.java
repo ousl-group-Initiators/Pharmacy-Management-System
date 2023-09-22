@@ -17,7 +17,7 @@ public class DBConnection {
         }
     }
 
-    public static DBConnection getInstance(){
+    public static DBConnection getDbConnection(){
         return (dbConnection == null)? dbConnection = new DBConnection(): dbConnection;
     }
 
