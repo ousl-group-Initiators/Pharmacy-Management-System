@@ -7,15 +7,17 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public interface EmployeeBO extends SuperBO {
-     boolean addEmployee(EmployeeDTO employee) throws SQLException, ClassNotFoundException;
+     boolean saveEmployee(EmployeeDTO employee) throws SQLException, ClassNotFoundException;
 
      boolean updateEmployee(EmployeeDTO employee) throws SQLException, ClassNotFoundException;
 
      boolean deleteEmployee(String id) throws SQLException, ClassNotFoundException;
 
-     EmployeeDTO searchEmployee(String id) throws SQLException, ClassNotFoundException;
+//     EmployeeDTO searchEmployee(String id) throws SQLException, ClassNotFoundException;
 
      ArrayList<EmployeeDTO> getAllEmployee() throws SQLException, ClassNotFoundException;
 
-     boolean employeeExist(String id) throws SQLException, ClassNotFoundException;
+     boolean ifEmployeeExist(String id) throws SQLException, ClassNotFoundException;
+
+     ArrayList<EmployeeDTO> searchEmployee(String searchText) throws SQLException, ClassNotFoundException;
 }
