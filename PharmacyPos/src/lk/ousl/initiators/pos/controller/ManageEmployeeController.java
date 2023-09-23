@@ -7,12 +7,12 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import lk.ousl.initiators.pos.bo.BoFactory;
 import lk.ousl.initiators.pos.bo.custom.EmployeeBO;
-import lk.ousl.initiators.pos.dao.CrudUtil;
 import lk.ousl.initiators.pos.db.DBConnection;
 import lk.ousl.initiators.pos.dto.EmployeeDTO;
 import lk.ousl.initiators.pos.dto.JobRoleDTO;
@@ -51,15 +51,11 @@ public class ManageEmployeeController {
 
     public void initialize() {
         loadAllJobRoles();
-        loadAllEmployees();
         clearFields();
-//        searchEmployees(searchText);
 
         colNic.setCellValueFactory(new PropertyValueFactory<>("emp_id"));
         colName.setCellValueFactory(new PropertyValueFactory<>("first_name"));
-//        tblEmployee.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("last_name"));
         colDOB.setCellValueFactory(new PropertyValueFactory<>("date_of_birth"));
-//        tblEmployee.getColumns().get(4).setCellValueFactory(new PropertyValueFactory<>("age"));
         colTelephoneNumber.setCellValueFactory(new PropertyValueFactory<>("telephone_number"));
         colAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
         colJobRole.setCellValueFactory(new PropertyValueFactory<>("job_role"));
@@ -73,9 +69,11 @@ public class ManageEmployeeController {
 
         txtSearch.textProperty().addListener((observable, oldValue, newValue) -> {
             searchText = newValue;
-//            searchEmployees(searchText);
+            searchEmployees(searchText);
         });
+        searchEmployees(searchText);
 
+//        cmbJobRole.getItems().addAll("Admin","Cashier","Pharmacist","Pharmacy Technician","Pharmacy Assistant");
 
     }
 
@@ -87,26 +85,23 @@ public class ManageEmployeeController {
 
 
     public void btnSaveEmployeeOnAction(ActionEvent actionEvent) {
-        EmployeeDTO employeeDTO = new EmployeeDTO(
-                txtEmployeeNic.getText(),
-                txtFirstName.getText(),
-                txtLastName.getText(),
-                Date.valueOf(dateDateOfBirth.getValue()),
-                Integer.parseInt(txtAge.getText()),
-                Integer.parseInt(txtTelephoneNumber.getText()),
-                txtAddress.getText(),
-                cmbJobRole.getValue().toString(),
-                txtDescription.getText()
-        );
         if (btnSaveEmployee.getText().equalsIgnoreCase("Save Employee")) {
             try {
-                if(existCustomerId(employeeDTO.getEmp_id())){
-                    new Alert(Alert.AlertType.ERROR, employeeDTO.getEmp_id() + " " +"Already Exists").show();
-                }else if (employeeBO.addEmployee(employeeDTO)) {
+                boolean isSavedEmployee = employeeBO.saveEmployee(new EmployeeDTO(
+                        txtEmployeeNic.getText(),
+                        txtFirstName.getText(),
+                        txtLastName.getText(),
+                        Date.valueOf(dateDateOfBirth.getValue()),
+                        Integer.parseInt(txtAge.getText()),
+                        Integer.parseInt(txtTelephoneNumber.getText()),
+                        txtAddress.getText(),
+                        cmbJobRole.getValue().toString(),
+                        txtDescription.getText()
+                ));
+                if (isSavedEmployee) {
+                    searchEmployees(searchText);
                     new Alert(Alert.AlertType.INFORMATION, "Employee Saved!").show();
-//                    searchEmployees(searchText);
                     clearFields();
-                    tblEmployee.refresh();
                 } else {
                     new Alert(Alert.AlertType.WARNING, "Try Again!").show();
                 }
@@ -115,15 +110,23 @@ public class ManageEmployeeController {
             }
         } else {
             try {
-                if (!existCustomerId(employeeDTO.getEmp_id())){
-                    new Alert(Alert.AlertType.ERROR, "There is no such customer associated with this Employee Id " +" "+ employeeDTO.getEmp_id()).show();
-                }else if (employeeBO.updateEmployee(employeeDTO)) {
+                boolean isUpdatedEmployee = employeeBO.updateEmployee(new EmployeeDTO(
+                        txtEmployeeNic.getText(),
+                        txtFirstName.getText(),
+                        txtLastName.getText(),
+                        Date.valueOf(dateDateOfBirth.getValue()),
+                        Integer.parseInt(txtAge.getText()),
+                        Integer.parseInt(txtTelephoneNumber.getText()),
+                        txtAddress.getText(),
+                        cmbJobRole.getValue().toString(),
+                        txtDescription.getText()
+                ));
+                 if (isUpdatedEmployee) {
+                    searchEmployees(searchText);
                     new Alert(Alert.AlertType.INFORMATION, "Employee Updated !").show();
-//                    searchEmployees(searchText);
                     clearFields();
-                    tblEmployee.refresh();
                 } else {
-                    new Alert(Alert.AlertType.WARNING, "Try Again!").show();
+                    new Alert(Alert.AlertType.WARNING, "Something Wrong!").show();
                 }
             } catch (ClassNotFoundException | SQLException e) {
                 e.printStackTrace();
@@ -131,40 +134,54 @@ public class ManageEmployeeController {
         }
     }
 
-   /* private void searchEmployees(String text){
-        String searchText = "%"+text+"%";
+    private void searchEmployees(String text) {
+        String searchText = "%" + text + "%";
+        //set value to table
+        ObservableList<EmployeeDTO> employeeDTOS = FXCollections.observableArrayList();
         try {
-            ObservableList<EmployeeDTO> tmList = FXCollections.observableArrayList();
-            Button button = new Button("Delete");
-//            while (employeeBO.searchEmployee()){
-//                Button button = new Button("Delete");
-//                EmployeeDTO employeeDTO = new EmployeeDTO(
-//
-//                );
-            button.setOnAction(event -> {
-                Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure whether do you want to delete this customer?", ButtonType.YES, ButtonType.NO);
-                Optional<ButtonType> buttonType = alert.showAndWait();
-                if (buttonType.get() == ButtonType.YES) {
-                    try {
-                        if (employeeBO.deleteEmployee(searchText)) {
-                            new Alert(Alert.AlertType.INFORMATION, "Customer Deleted!").show();
-                        } else {
-                            new Alert(Alert.AlertType.WARNING, "Try Again!").show();
+            ArrayList<EmployeeDTO> list = employeeBO.searchEmployee(searchText);
+            for (EmployeeDTO employeeDTO : list) {
+                Button button = new Button("Delete");
+                EmployeeDTO employeeDTO1 = new EmployeeDTO(
+                        employeeDTO.getEmp_id(),
+                        employeeDTO.getFirst_name(),
+                        employeeDTO.getLast_name(),
+                        employeeDTO.getDate_of_birth(),
+                        employeeDTO.getAge(),
+                        employeeDTO.getTelephone_number(),
+                        employeeDTO.getAddress(),
+                        employeeDTO.getJob_role(),
+                        employeeDTO.getDescription(),
+                        button
+                );
+                employeeDTOS.add(employeeDTO1);
+                button.setOnAction(event -> {
+                    Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure  want to delete this employee ?",
+                            ButtonType.YES, ButtonType.NO);
+                    Optional<ButtonType> buttonType = alert.showAndWait();
+                    if (buttonType.get() == ButtonType.YES) {
+
+                        try {
+                            boolean isDeleteCustomer = employeeBO.deleteEmployee(employeeDTO1.getEmp_id());
+                            if (isDeleteCustomer) {
+                                searchEmployees(searchText);
+                                new Alert(Alert.AlertType.INFORMATION, "Employee Deleted").show();
+                            } else {
+                                new Alert(Alert.AlertType.WARNING, "Something Wrong!").show();
+                            }
+                        } catch (ClassNotFoundException | SQLException e) {
+                            e.printStackTrace();
                         }
-                    } catch (ClassNotFoundException | SQLException e) {
-                        e.printStackTrace();
                     }
-                }
-            });
-        } catch (Exception e) {
+                });
+            }
+        } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
-//         catch (ClassNotFoundException | SQLException e) {
-//            e.printStackTrace();
-//        }
-    }*/
+        tblEmployee.setItems(employeeDTOS);
+    }
 
-    private void loadAllEmployees() {
+   /* private void loadAllEmployees() {
         try {
             ArrayList<EmployeeDTO> allEmployees = employeeBO.getAllEmployee();
             for (EmployeeDTO e : allEmployees) {
@@ -183,11 +200,11 @@ public class ManageEmployeeController {
         } catch (ClassNotFoundException | SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
-    }
+    }*/
 
-    boolean existCustomerId(String id) throws SQLException, ClassNotFoundException {
-        return employeeBO.employeeExist(id);
-    }
+   /* boolean existEmployeeId(String id) throws SQLException, ClassNotFoundException {
+        return employeeBO.ifEmployeeExist(id);
+    }*/
 
     public void btnNewEmployeeOnAction(ActionEvent actionEvent) {
         clearFields();
@@ -211,11 +228,11 @@ public class ManageEmployeeController {
         txtEmployeeNic.clear();
         txtFirstName.clear();
         txtLastName.clear();
-        dateDateOfBirth.setPromptText("");
+        dateDateOfBirth.setValue(null);
         txtAge.clear();
         txtTelephoneNumber.clear();
         txtAddress.clear();
-        cmbJobRole.setValue("Job Role");
+        cmbJobRole.getSelectionModel().clearSelection();
         txtDescription.clear();
     }
 
