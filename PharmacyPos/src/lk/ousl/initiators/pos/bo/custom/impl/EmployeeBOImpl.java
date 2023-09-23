@@ -1,6 +1,7 @@
 package lk.ousl.initiators.pos.bo.custom.impl;
 
 import lk.ousl.initiators.pos.bo.custom.EmployeeBO;
+import lk.ousl.initiators.pos.dao.CrudDAO;
 import lk.ousl.initiators.pos.dao.DAOFactory;
 import lk.ousl.initiators.pos.dao.custom.EmployeeDAO;
 import lk.ousl.initiators.pos.dto.EmployeeDTO;
@@ -10,8 +11,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class EmployeeBOImpl implements EmployeeBO {
-    //    private final EmployeeDAO employeeDAO = new EmployeeDAOImpl();
-    EmployeeDAO employeeDAO = (EmployeeDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.EMPLOYEE);
+
+    private final EmployeeDAO employeeDAO = (EmployeeDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.EMPLOYEE);
 
     @Override
     public boolean addEmployee(EmployeeDTO dto) throws SQLException, ClassNotFoundException {
@@ -86,6 +87,11 @@ public class EmployeeBOImpl implements EmployeeBO {
             ));
         }
         return allEmployees;
+    }
+
+    @Override
+    public boolean employeeExist(String id) throws SQLException, ClassNotFoundException {
+        return employeeDAO.ifExist(id);
     }
 
 }
