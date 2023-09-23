@@ -1,9 +1,9 @@
 package lk.ousl.initiators.pos.dto;
 
-import java.io.Serializable;
-import java.sql.Date;
+import java.awt.*;
+import java.util.Date;
 
-public class EmployeeDTO implements Serializable {
+public class EmployeeDTO {
     private String emp_id;
     private String first_name;
     private String last_name;
@@ -13,6 +13,7 @@ public class EmployeeDTO implements Serializable {
     private String address;
     private String job_role;
     private String description;
+    private Button button;
 
     public EmployeeDTO() {
     }
@@ -27,6 +28,19 @@ public class EmployeeDTO implements Serializable {
         this.address = address;
         this.job_role = job_role;
         this.description = description;
+    }
+
+    public EmployeeDTO(String emp_id, String first_name, String last_name, Date date_of_birth, int age, int telephone_number, String address, String job_role, String description, Button button) {
+        this.emp_id = emp_id;
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.date_of_birth = date_of_birth;
+        this.age = age;
+        this.telephone_number = telephone_number;
+        this.address = address;
+        this.job_role = job_role;
+        this.description = description;
+        this.button = button;
     }
 
     public String getEmp_id() {
@@ -99,5 +113,13 @@ public class EmployeeDTO implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Button getButton() {
+        return button;
+    }
+
+    public void setButton(Button button) {
+        this.button = button;
     }
 }
