@@ -47,10 +47,10 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     }
 
     @Override
-    public Employee search(String text) throws SQLException, ClassNotFoundException {
-        ResultSet rst = CrudUtil.executeQuery("SELECT * FROM Employee WHERE emp_id LIKE? || name LIKE? || address LIKE?");
+    public Employee search(String id) throws SQLException, ClassNotFoundException {
+        ResultSet rst = CrudUtil.executeQuery("SELECT * FROM Employee WHERE emp_id LIKE? || name LIKE? || address LIKE?", id);
         rst.next();
-        return new Employee(text,
+        return new Employee(id,
                 rst.getString("first_name"),
                 rst.getString("last_name"),
                 rst.getDate("date_of_birth"),
@@ -83,7 +83,31 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     }
 
     @Override
-    public boolean ifExist(String id) throws SQLException, ClassNotFoundException {
+    public boolean ifEmployeeExist(String id) throws SQLException, ClassNotFoundException {
         return CrudUtil.executeQuery("SELECT emp_id FROM Employee WHERE emp_id=?",id).next();
+    }
+
+    @Override
+    public ArrayList<Employee> searchEmployee(String searchText) throws SQLException, ClassNotFoundException {
+        String sql = "SELECT * FROM Employee WHERE emp_id LIKE ? || first_name LIKE? || last_name LIKE? || address LIKE ?";
+        ResultSet set = CrudUtil.executeQuery(sql,searchText,searchText,searchText,searchText);
+
+        ArrayList<Employee> employeeList = new ArrayList<>();
+
+        while (set.next()){
+            Employee employee = new Employee(
+                    set.getString("emp_id"),
+                    set.getString("first_name"),
+                    set.getString("last_name"),
+                    set.getDate("date_of_birth"),
+                    set.getInt("age"),
+                    set.getInt("telephone_number"),
+                    set.getString("address"),
+                    set.getString("job_role"),
+                    set.getString("description")
+            );
+            employeeList.add(employee);
+        }
+        return employeeList;
     }
 }
