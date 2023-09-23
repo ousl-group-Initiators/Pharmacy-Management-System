@@ -1,7 +1,6 @@
 package lk.ousl.initiators.pos.entity;
 
-
-import java.sql.Date;
+import java.util.Date;
 
 public class Employee {
     private String emp_id;
