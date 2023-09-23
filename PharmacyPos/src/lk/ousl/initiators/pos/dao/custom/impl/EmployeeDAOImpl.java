@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class EmployeeDAOImpl implements EmployeeDAO {
+
     @Override
     public boolean save(Employee employee) throws SQLException, ClassNotFoundException {
         return CrudUtil.executeUpdate("INSERT INTO Employee(emp_id, first_name, last_name, date_of_birth, age, telephone_number, address, job_role, description) VALUES (?,?,?,?,?,?,?,?,?)",
@@ -46,10 +47,10 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     }
 
     @Override
-    public Employee search(String id) throws SQLException, ClassNotFoundException {
-        ResultSet rst = CrudUtil.executeQuery("SELECT * FROM Employee WHERE emp_id=?", id);
+    public Employee search(String text) throws SQLException, ClassNotFoundException {
+        ResultSet rst = CrudUtil.executeQuery("SELECT * FROM Employee WHERE emp_id LIKE? || name LIKE? || address LIKE?");
         rst.next();
-        return new Employee(id,
+        return new Employee(text,
                 rst.getString("first_name"),
                 rst.getString("last_name"),
                 rst.getDate("date_of_birth"),
@@ -79,5 +80,10 @@ public class EmployeeDAOImpl implements EmployeeDAO {
             ));
         }
         return allEmployees;
+    }
+
+    @Override
+    public boolean ifExist(String id) throws SQLException, ClassNotFoundException {
+        return CrudUtil.executeQuery("SELECT emp_id FROM Employee WHERE emp_id=?",id).next();
     }
 }
