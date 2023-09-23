@@ -1,5 +1,7 @@
 package lk.ousl.initiators.pos.dto;
 
+import javafx.scene.control.Button;
+
 import java.awt.*;
 import java.util.Date;
 
@@ -13,7 +15,7 @@ public class EmployeeDTO {
     private String address;
     private String job_role;
     private String description;
-    private Button button;
+    private javafx.scene.control.Button button;
 
     public EmployeeDTO() {
     }
