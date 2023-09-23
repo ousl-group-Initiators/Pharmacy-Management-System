@@ -15,7 +15,7 @@ public class EmployeeBOImpl implements EmployeeBO {
     private final EmployeeDAO employeeDAO = (EmployeeDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.EMPLOYEE);
 
     @Override
-    public boolean addEmployee(EmployeeDTO dto) throws SQLException, ClassNotFoundException {
+    public boolean saveEmployee(EmployeeDTO dto) throws SQLException, ClassNotFoundException {
         return employeeDAO.save(new Employee(
                 dto.getEmp_id(),
                 dto.getFirst_name(),
@@ -50,26 +50,6 @@ public class EmployeeBOImpl implements EmployeeBO {
     }
 
     @Override
-    public EmployeeDTO searchEmployee(String id) throws SQLException, ClassNotFoundException {
-        Employee employee = employeeDAO.search(id);
-        if (employee == null) {
-            return null;
-        } else {
-            return new EmployeeDTO(
-                    employee.getEmp_id(),
-                    employee.getFirst_name(),
-                    employee.getLast_name(),
-                    employee.getDate_of_birth(),
-                    employee.getAge(),
-                    employee.getTelephone_number(),
-                    employee.getAddress(),
-                    employee.getJob_role(),
-                    employee.getDescription()
-            );
-        }
-    }
-
-    @Override
     public ArrayList<EmployeeDTO> getAllEmployee() throws SQLException, ClassNotFoundException {
         ArrayList<EmployeeDTO> allEmployees = new ArrayList<>();
         ArrayList<Employee> all = employeeDAO.getAll();
@@ -90,8 +70,30 @@ public class EmployeeBOImpl implements EmployeeBO {
     }
 
     @Override
-    public boolean employeeExist(String id) throws SQLException, ClassNotFoundException {
-        return employeeDAO.ifExist(id);
+    public boolean ifEmployeeExist(String id) throws SQLException, ClassNotFoundException {
+        return employeeDAO.ifEmployeeExist(id);
+    }
+
+    @Override
+    public ArrayList<EmployeeDTO> searchEmployee(String searchText) throws SQLException, ClassNotFoundException {
+        ArrayList<Employee> entityCustomerList = employeeDAO.searchEmployee(searchText);
+        ArrayList<EmployeeDTO> customerDTOList = new ArrayList<>();
+
+        for(Employee employee: entityCustomerList){
+            EmployeeDTO customerDTO= new EmployeeDTO(
+                    employee.getEmp_id(),
+                    employee.getFirst_name(),
+                    employee.getLast_name(),
+                    employee.getDate_of_birth(),
+                    employee.getAge(),
+                    employee.getTelephone_number(),
+                    employee.getAddress(),
+                    employee.getJob_role(),
+                    employee.getDescription()
+            );
+            customerDTOList.add(customerDTO);
+        }
+        return customerDTOList;
     }
 
 }
