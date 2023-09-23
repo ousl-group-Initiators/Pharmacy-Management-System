@@ -1,6 +1,6 @@
 package lk.ousl.initiators.pos.bo;
 
-import lk.ousl.initiators.pos.bo.custom.impl.EmployeeBOImpl;
+import lk.ousl.initiators.pos.bo.custom.impl.*;
 
 public class BoFactory {
     private static BoFactory boFactory;
@@ -23,7 +23,7 @@ public class BoFactory {
     public SuperBO getBo(BoTypes types){
         switch (types){
             case Employee:
-                return new EmployeeBOImpl();
+                return new EmployeeBOImpl(); //SuperBO superBO = new EmployeeBoImpl();
             default:
                 return null;
         }
