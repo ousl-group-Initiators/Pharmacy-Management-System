@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="708.0" prefWidth="1096.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ousl.initiators.pos.controller.DashboardController">
+<AnchorPane fx:id="dashboardContext" prefHeight="708.0" prefWidth="1096.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ousl.initiators.pos.controller.DashboardController">
    <children>
       <Pane prefHeight="65.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -152,7 +152,7 @@
             </JFXButton>
          </children>
       </Pane>
-      <JFXButton layoutX="804.0" layoutY="613.0" prefHeight="46.0" prefWidth="271.0" styleClass="billing_dashboard_button" stylesheets="@../../../../../assets/css/Styles.css" text="View Billing Dashboard" textFill="WHITE">
+      <JFXButton layoutX="804.0" layoutY="613.0" onAction="#viewBillingDashboardOnAction" prefHeight="46.0" prefWidth="271.0" styleClass="billing_dashboard_button" stylesheets="@../../../../../assets/css/Styles.css" text="View Billing Dashboard" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
