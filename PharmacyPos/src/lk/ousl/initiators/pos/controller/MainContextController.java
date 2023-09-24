@@ -54,7 +54,8 @@ public class MainContextController {
     }
 
     // create ManageSuppliers button OnAction method to load the dashboard ui
-    public void manageSuppliersOnAction(ActionEvent actionEvent) {
+    public void manageSuppliersOnAction(ActionEvent actionEvent) throws IOException {
+        setUi("ManageSuppliers");
     }
 
     // create ManageItems button OnAction method to load the dashboard ui
