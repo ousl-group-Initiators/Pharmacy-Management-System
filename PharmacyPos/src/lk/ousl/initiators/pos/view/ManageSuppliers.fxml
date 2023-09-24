@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane fx:id="manageSupplierContext" prefHeight="708.0" prefWidth="1096.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ousl.initiators.pos.controller.ManageSuppliersController">
+   <children>
+      <Pane prefHeight="65.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="643.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Separator layoutY="65.0" prefHeight="4.0" prefWidth="1096.0" />
+            <Label layoutX="28.0" layoutY="10.0" styleClass="heading" stylesheets="@../../../../../assets/css/Styles.css" text="Manage Suppliers" />
+             <Separator layoutY="-1.0" prefHeight="4.0" prefWidth="1096.0" />
+         </children>
+      </Pane>
+      <JFXTextField focusColor="#419043" labelFloat="true" layoutX="774.0" layoutY="91.0" prefHeight="30.0" prefWidth="300.0" promptText="Search Suppliers" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXTextField>
+       <JFXTextField focusColor="#419043" labelFloat="true" layoutX="28.0" layoutY="148.0" prefHeight="30.0" prefWidth="300.0" promptText="Supplier Id" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
+       <JFXTextField focusColor="#419043" labelFloat="true" layoutX="398.0" layoutY="149.0" prefHeight="30.0" prefWidth="300.0" promptText="Age" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
+       <JFXTextField focusColor="#419043" labelFloat="true" layoutX="28.0" layoutY="208.0" prefHeight="30.0" prefWidth="300.0" promptText="First Name" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
+       <JFXTextField focusColor="#419043" labelFloat="true" layoutX="398.0" layoutY="208.0" prefHeight="30.0" prefWidth="300.0" promptText="Telephone No" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
+       <JFXTextField focusColor="#419043" labelFloat="true" layoutX="760.0" layoutY="152.0" prefHeight="30.0" prefWidth="300.0" promptText="E-mail" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
+       <JFXTextField focusColor="#419043" labelFloat="true" layoutX="28.0" layoutY="268.0" prefHeight="30.0" prefWidth="300.0" promptText="Last Name" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
+       <DatePicker layoutX="28.0" layoutY="333.0" prefHeight="30.0" prefWidth="300.0" promptText="Date of Birth" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
+       <JFXTextArea focusColor="#419043" labelFloat="true"  layoutX="398.0" layoutY="267.0" prefHeight="87.0" prefWidth="300.0" promptText="Address" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
+       <JFXTextArea focusColor="#419043" labelFloat="true"  layoutX="760.0" layoutY="209.0" prefHeight="145.0" prefWidth="300.0" promptText="Description Add Here" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
+       <JFXButton layoutX="28.0" layoutY="383.0" prefHeight="40.0" prefWidth="120.0" styleClass="addButton" stylesheets="@../../../../../assets/css/Styles.css" text="ADD" textFill="WHITE" />
+       <JFXButton layoutX="159.0" layoutY="383.0" prefHeight="40.0" prefWidth="120.0" styleClass="updateButton" stylesheets="@../../../../../assets/css/Styles.css" text="UPDATE" textFill="WHITE" />
+       <JFXButton layoutX="292.0" layoutY="383.0" prefHeight="40.0" prefWidth="120.0" styleClass="deleteButton" stylesheets="@../../../../../assets/css/Styles.css" text="DELETE" textFill="WHITE" />
+       <TableView layoutX="28.0" layoutY="441.0" prefHeight="235.0" prefWidth="1035.0">
+        <columns>
+          <TableColumn prefWidth="95.0" text="Supplier Id" />
+          <TableColumn prefWidth="241.0" text="Name" />
+            <TableColumn prefWidth="132.0" text="DOB" />
+            <TableColumn prefWidth="87.0" text="Age" />
+            <TableColumn prefWidth="146.0" text="Telephone Number" />
+            <TableColumn minWidth="0.0" prefWidth="225.0" text="Address" />
+            <TableColumn minWidth="0.0" prefWidth="108.0" text="E-mail" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
