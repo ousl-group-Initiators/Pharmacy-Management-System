@@ -66,7 +66,8 @@ public class MainContextController {
     }
 
     // create ManageInventory button OnAction method to load the dashboard ui
-    public void manageInventoryOnAction(ActionEvent actionEvent) {
+    public void manageInventoryOnAction(ActionEvent actionEvent) throws IOException {
+        setUi("Inventory");
     }
 
     // create Reports button OnAction method to load the dashboard ui
