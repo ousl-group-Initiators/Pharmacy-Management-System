@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane fx:id="OrdersContext" prefHeight="708.0" prefWidth="1096.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ousl.initiators.pos.controller.OrdersController">
+   <children>
+      <Pane prefHeight="65.0" AnchorPane.bottomAnchor="643.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Separator layoutY="65.0" prefWidth="1096.0" />
+            <Label layoutX="28.0" layoutY="10.0" styleClass="heading" stylesheets="@../../../../../assets/css/Styles.css" text="Orders" />
+            <Separator prefWidth="1096.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
