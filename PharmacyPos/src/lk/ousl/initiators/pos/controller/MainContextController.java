@@ -71,14 +71,17 @@ public class MainContextController {
     }
 
     // create Reports button OnAction method to load the dashboard ui
-    public void reportsOnAction(ActionEvent actionEvent) {
+    public void reportsOnAction(ActionEvent actionEvent) throws IOException {
+        setUi("Reports");
     }
 
-    // create Backups button OnAction method to load the dashboard ui
-    public void backupsOnAction(ActionEvent actionEvent) {
+    // create Orders button OnAction method to load the dashboard ui
+    public void OrdersOnAction(ActionEvent actionEvent) throws IOException {
+        setUi("Orders");
     }
 
     // create Logout button OnAction method to load the dashboard ui
-    public void logoutOnAction(ActionEvent actionEvent) {
+    public void logoutOnAction(ActionEvent actionEvent) throws IOException {
+        setUi("Login");
     }
 }
