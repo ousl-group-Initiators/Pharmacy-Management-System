@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="loginFormContext" prefHeight="450.0" prefWidth="700.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ousl.initiators.pos.controller.LoginController">
+   <children>
+      <Label layoutX="369.0" layoutY="37.0" styleClass="heading" stylesheets="@../../../../../assets/css/Styles.css" text="Registration " textFill="#2f536b" />
+      <JFXTextField focusColor="#419043" labelFloat="true" layoutX="369.0" layoutY="104.0" prefHeight="35.0" prefWidth="280.0" promptText="username" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXTextField>
+      <JFXPasswordField focusColor="#419043" labelFloat="true" layoutX="369.0" layoutY="163.0" prefHeight="35.0" prefWidth="280.0" promptText="password" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXPasswordField>
+      <JFXButton layoutX="369.0" layoutY="373.0" onAction="#loginOnAction" prefHeight="40.0" prefWidth="280.0" style="-fx-background-color: #2f536b;" styleClass="addButton" stylesheets="@../../../../../assets/css/Styles.css" text="Register" textFill="WHITE" />
+      <ImageView fitHeight="450.0" fitWidth="356.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../assets/images/loginUi.png" />
+         </image>
+      </ImageView>
+      <JFXTextField focusColor="#419043" labelFloat="true" layoutX="369.0" layoutY="227.0" prefHeight="35.0" prefWidth="280.0" promptText="confirm password" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXTextField>
+      <JFXPasswordField focusColor="#419043" labelFloat="true" layoutX="369.0" layoutY="288.0" prefHeight="35.0" prefWidth="280.0" promptText="job role" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXPasswordField>
+   </children>
+</AnchorPane>
