@@ -17,14 +17,14 @@
             <Separator prefWidth="1096.0" />
          </children>
       </Pane>
-      <TableView fx:id="tblEmployee" layoutX="28.0" layoutY="167.0" prefHeight="507.0" prefWidth="1035.0">
+      <TableView fx:id="tblInventory" layoutX="28.0" layoutY="167.0" prefHeight="507.0" prefWidth="1035.0">
          <columns>
             <TableColumn fx:id="colName" prefWidth="268.0" text="Name" />
-            <TableColumn fx:id="colDOB" prefWidth="140.0" text="Weight" />
-            <TableColumn fx:id="colTelephoneNumber" prefWidth="220.0" text="Category" />
-            <TableColumn fx:id="colAddress" minWidth="0.0" prefWidth="128.0" text="Price" />
-            <TableColumn fx:id="colJobRole" minWidth="0.0" prefWidth="135.0" text="Stock" />
-            <TableColumn fx:id="colOption" minWidth="0.0" prefWidth="143.0" text="Status" />
+            <TableColumn fx:id="colWeight" prefWidth="140.0" text="Weight" />
+            <TableColumn fx:id="colCategory" prefWidth="220.0" text="Category" />
+            <TableColumn fx:id="colPrice" minWidth="0.0" prefWidth="128.0" text="Price" />
+            <TableColumn fx:id="colStock" minWidth="0.0" prefWidth="135.0" text="Stock" />
+            <TableColumn fx:id="colStatus" minWidth="0.0" prefWidth="143.0" text="Status" />
          </columns>
       </TableView>
       <TextField fx:id="txtSearch" layoutX="28.0" layoutY="93.0" prefHeight="40.0" prefWidth="1035.0" promptText="Search Inventroy" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
