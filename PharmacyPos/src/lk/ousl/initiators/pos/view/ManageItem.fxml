@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane prefHeight="708.0" prefWidth="1096.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ousl.initiators.pos.controller.ManageItemController">
+   <children>
+      <Label layoutX="38.0" layoutY="20.0" styleClass="heading" stylesheets="@../../../../../assets/css/Styles.css" text="Manage Items" />
+      <JFXTextField focusColor="#419043" labelFloat="true" layoutX="784.0" layoutY="101.0" prefHeight="30.0" prefWidth="300.0" promptText="Search Item" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXTextField>
+      <JFXTextField focusColor="#419043" labelFloat="true" layoutX="38.0" layoutY="158.0" prefHeight="30.0" prefWidth="300.0" promptText="Item Id" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
+      <DatePicker layoutX="408.0" layoutY="158.0" prefHeight="30.0" prefWidth="300.0" promptText="Expire Date" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
+      <JFXTextField focusColor="#419043" labelFloat="true" layoutX="38.0" layoutY="218.0" prefHeight="30.0" prefWidth="300.0" promptText="Item Name" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
+      <JFXTextField focusColor="#419043" labelFloat="true" layoutX="408.0" layoutY="218.0" prefHeight="30.0" prefWidth="300.0" promptText="Item Quantity" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
+      <JFXTextField focusColor="#419043" labelFloat="true" layoutX="38.0" layoutY="278.0" prefHeight="30.0" prefWidth="300.0" promptText="Item Code" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
+      <JFXTextField focusColor="#419043" labelFloat="true" layoutX="408.0" layoutY="278.0" prefHeight="30.0" prefWidth="300.0" promptText="Unit Price" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
+      <DatePicker layoutX="38.0" layoutY="343.0" prefHeight="30.0" prefWidth="300.0" promptText="Manufacture Date" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
+      <JFXTextField focusColor="#419043" labelFloat="true" layoutX="407.0" layoutY="339.0" prefHeight="30.0" prefWidth="300.0" promptText="Unit Discount" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
+      <JFXComboBox focusColor="#419043" layoutX="770.0" layoutY="162.0" prefWidth="300.0" promptText="Supplier ID" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
+      <JFXTextArea focusColor="#419043" labelFloat="true" layoutX="770.0" layoutY="219.0" prefHeight="145.0" prefWidth="300.0" promptText="Description Add Here" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
+      <JFXButton layoutX="38.0" layoutY="393.0" prefHeight="40.0" prefWidth="120.0" styleClass="addButton" stylesheets="@../../../../../assets/css/Styles.css" text="ADD" textFill="WHITE" />
+      <JFXButton layoutX="169.0" layoutY="393.0" prefHeight="40.0" prefWidth="120.0" styleClass="updateButton" stylesheets="@../../../../../assets/css/Styles.css" text="UPDATE" textFill="WHITE" />
+      <JFXButton layoutX="302.0" layoutY="393.0" prefHeight="40.0" prefWidth="120.0" styleClass="deleteButton" stylesheets="@../../../../../assets/css/Styles.css" text="DELETE" textFill="WHITE" />
+      <Pane layoutX="10.0" layoutY="10.0" prefHeight="65.0">
+         <children>
+            <Separator layoutY="65.0" prefWidth="1096.0" />
+            <Label layoutX="28.0" layoutY="10.0" styleClass="heading" stylesheets="@../../../../../assets/css/Styles.css" />
+         </children>
+      </Pane>
+      <TableView layoutX="39.0" layoutY="459.0" prefHeight="200.0" prefWidth="1036.0">
+        <columns>
+          <TableColumn prefWidth="106.0" text="Item ID" />
+          <TableColumn prefWidth="127.0" text="Name" />
+            <TableColumn prefWidth="102.0" text="Item Code" />
+            <TableColumn prefWidth="128.0" text="MFD" />
+            <TableColumn prefWidth="130.0" text="EXD" />
+            <TableColumn text="QTY" />
+            <TableColumn prefWidth="130.0" text="Unit Price" />
+            <TableColumn prefWidth="109.0" text="Discount" />
+            <TableColumn prefWidth="123.0" text="Supplier ID" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
