@@ -9,7 +9,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="loginFormContext" prefHeight="450.0" prefWidth="700.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ousl.initiators.pos.controller.LoginController">
+<AnchorPane fx:id="RegistrationFormContext" prefHeight="450.0" prefWidth="700.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ousl.initiators.pos.controller.RegistrationFormController">
    <children>
       <Label layoutX="369.0" layoutY="37.0" styleClass="heading" stylesheets="@../../../../../assets/css/Styles.css" text="Registration " textFill="#2f536b" />
       <JFXTextField focusColor="#419043" labelFloat="true" layoutX="369.0" layoutY="104.0" prefHeight="35.0" prefWidth="280.0" promptText="username" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css">
