@@ -15,10 +15,24 @@ public class DrugsDTO {
     private Date EXD;
     private String Supply_id;
     private String description;
-    public DrugsDTO(){
+    private javafx.scene.control.Button button;
+    public DrugsDTO(){}
+
+    public DrugsDTO(String drug_id, String drug_name, String batch_number, Date MFD, Date EXD,int drug_quantity, double unit_price, double unit_discount,  String supply_id, String description) {
+        this.drug_id = drug_id;
+        this.drug_name = drug_name;
+        this.batch_number = batch_number;
+        this.drug_quantity = drug_quantity;
+        this.unit_price = unit_price;
+        this.unit_discount = unit_discount;
+        this.MFD = MFD;
+        this.EXD = EXD;
+        this.Supply_id = supply_id;
+        this.description = description;
 
     }
-    public DrugsDTO(String drug_id, String drug_name, String batch_number, int drug_quantity, double unit_price, double unit_discount, Date MFD, Date EXD, String supply_id, String description) {
+
+    public DrugsDTO(String drug_id, String drug_name, String batch_number, Date MFD, Date EXD,int drug_quantity, double unit_price, double unit_discount,  String supply_id, String description, Button button) {
         this.drug_id = drug_id;
         this.drug_name = drug_name;
         this.batch_number = batch_number;
@@ -27,22 +41,11 @@ public class DrugsDTO {
         this.unit_discount = unit_discount;
         this.MFD = MFD;
         this.EXD = EXD;
-        Supply_id = supply_id;
-        this.description = description;
-    }
-    public DrugsDTO(String drug_id, String drug_name, String batch_number, int drug_quantity, double unit_price, double unit_discount, Date MFD, Date EXD, String supply_id, String description, Button button) {
-        this.drug_id = drug_id;
-        this.drug_name = drug_name;
-        this.batch_number = batch_number;
-        this.drug_quantity = drug_quantity;
-        this.unit_price = unit_price;
-        this.unit_discount = unit_discount;
-        this.MFD = MFD;
-        this.EXD = EXD;
-        Supply_id = supply_id;
+        this.Supply_id = supply_id;
         this.description = description;
         this.button = button;
     }
+
 
     public String getDrug_id() {
         return drug_id;
@@ -131,8 +134,5 @@ public class DrugsDTO {
     public void setButton(Button button) {
         this.button = button;
     }
-
-    private javafx.scene.control.Button button;
-
 
 }
