@@ -20,5 +20,5 @@ public interface DrugsBO extends SuperBO {
 
     boolean ifDrugsExist(String id) throws SQLException, ClassNotFoundException;
 
-    ArrayList<DrugsDTO> searchEmployee(String searchText) throws SQLException, ClassNotFoundException;
+    ArrayList<DrugsDTO> searchDrugs(String searchText) throws SQLException, ClassNotFoundException;
 }
