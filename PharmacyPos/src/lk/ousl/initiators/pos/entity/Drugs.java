@@ -16,7 +16,7 @@ public class Drugs {
 
     public Drugs(){}
 
-    public Drugs(String drug_id, String drug_name, String batch_number, int drug_quantity, double unit_price, double unit_discount, Date MFD, Date EXD, String supply_id, String description) {
+    public Drugs(String drug_id, String drug_name, String batch_number, Date MFD, Date EXD,int drug_quantity, double unit_price, double unit_discount,  String supply_id, String description) {
         this.drug_id = drug_id;
         this.drug_name = drug_name;
         this.batch_number = batch_number;
@@ -25,7 +25,7 @@ public class Drugs {
         this.unit_discount = unit_discount;
         this.MFD = MFD;
         this.EXD = EXD;
-        Supply_id = supply_id;
+        this.Supply_id = supply_id;
         this.description = description;
     }
 
@@ -110,7 +110,19 @@ public class Drugs {
         this.description = description;
     }
 
-
-
+    public String toString() {
+        return "Drugs{" +
+                "drug_id='" + drug_id + '\'' +
+                ",drug_name='" + drug_name + '\'' +
+                ",batch_number='" + batch_number + '\'' +
+                ",drug_quantity=" + drug_quantity +
+                ", unit_price=" + unit_price +
+                ", unit_discount=" + unit_discount +
+                ", MFD=" + MFD +
+                ", EXD =" + EXD  +
+                ", Supply_id='" + Supply_id + '\'' +
+                ", description='" + description + '\'' +
+                '}';
+    }
 }
 
