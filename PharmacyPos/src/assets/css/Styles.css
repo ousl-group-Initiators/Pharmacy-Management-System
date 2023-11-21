@@ -99,3 +99,52 @@
     -fx-border-radius: 10px;
     -fx-font-weight: bold;
 }
+
+.total{
+    -fx-font-family: "Roboto", "Segoe UI", sans-serif;
+    -fx-font-size: 35px;
+    -fx-font-weight: bold;
+}
+
+.viewOrder{
+    -fx-font-family: "Roboto", "Segoe UI", sans-serif;
+    -fx-font-size: 14px;
+    -fx-background-color: #007bff;
+    -fx-border-radius: 10px;
+    -fx-font-weight: bold;
+}
+
+.viewInventory{
+    -fx-font-family: "Roboto", "Segoe UI", sans-serif;
+    -fx-font-size: 14px;
+    -fx-background-color: #ffa500;
+    -fx-border-radius: 10px;
+    -fx-font-weight: bold;
+}
+
+.PayText{
+    -fx-font-family: "Roboto", "Segoe UI", sans-serif;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.PayLabel{
+    -fx-font-family: "Roboto", "Segoe UI", sans-serif;
+    -fx-font-size: 16px;
+}
+
+.PlaceOrder{
+    -fx-font-family: "Roboto", "Segoe UI", sans-serif;
+    -fx-font-size: 18px;
+    -fx-background-color: #dc3545;
+    -fx-border-radius: 10px;
+    -fx-font-weight: bold;
+}
+
+.CancelOrder{
+    -fx-font-family: "Roboto", "Segoe UI", sans-serif;
+    -fx-font-size: 14px;
+    -fx-background-color: #808080;
+    -fx-border-radius: 10px;
+    -fx-font-weight: bold;
+}
