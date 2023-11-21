@@ -84,4 +84,7 @@ public class MainContextController {
     public void logoutOnAction(ActionEvent actionEvent) throws IOException {
         setUi("Login");
     }
+
+    public void settingsOnAction(ActionEvent actionEvent) {
+    }
 }
