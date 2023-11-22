@@ -85,6 +85,8 @@ public class MainContextController {
         setUi("Login");
     }
 
-    public void settingsOnAction(ActionEvent actionEvent) {
+    // create Settings button OnAction method to load the dashboard ui
+    public void settingsOnAction(ActionEvent actionEvent) throws IOException {
+        setUi("Settings");
     }
 }
