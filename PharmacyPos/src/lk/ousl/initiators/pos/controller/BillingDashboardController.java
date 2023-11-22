@@ -26,6 +26,7 @@ public class BillingDashboardController {
     public TableColumn colTotal;
     public TableColumn colOption;
     public Label lblTotal;
+    public Label lblInvoiceNo;
 
     public void btnPlaceOrderOnAction(ActionEvent actionEvent) {
     }
@@ -40,5 +41,8 @@ public class BillingDashboardController {
     }
 
     public void btnViewOrderDetailsOnAction(ActionEvent actionEvent) {
+    }
+
+    public void btnLogOutOnAction(ActionEvent actionEvent) {
     }
 }
