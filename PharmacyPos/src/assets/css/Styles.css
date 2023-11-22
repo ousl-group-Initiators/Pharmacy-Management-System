@@ -148,3 +148,42 @@
     -fx-border-radius: 10px;
     -fx-font-weight: bold;
 }
+
+.Logout{
+    -fx-font-family: "Roboto", "Segoe UI", sans-serif;
+    -fx-font-size: 14px;
+    -fx-background-color: #FF0000;
+    -fx-border-radius: 10px;
+    -fx-font-weight: bold;
+}
+
+.DailySale{
+    -fx-font-family: "Roboto", "Segoe UI", sans-serif;
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+}
+
+.DateLabel{
+    -fx-font-family: "Roboto", "Segoe UI", sans-serif;
+    -fx-font-size: 20px;
+}
+
+.totalSale{
+    -fx-font-family: "Roboto", "Segoe UI", sans-serif;
+    -fx-font-size: 50px;
+    -fx-font-weight: bold;
+}
+
+.RegisterText{
+    -fx-font-family: "Roboto", "Segoe UI", sans-serif;
+    -fx-font-size: 25px;
+    -fx-font-weight: bold;
+}
+
+.RegisterButton{
+    -fx-font-family: "Roboto", "Segoe UI", sans-serif;
+    -fx-font-size: 14px;
+    -fx-background-color: #003168;
+    -fx-border-radius: 10px;
+    -fx-font-weight: bold;
+}
