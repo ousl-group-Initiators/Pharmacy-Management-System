@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane fx:id="SettingsContext" prefHeight="708.0" prefWidth="1096.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ousl.initiators.pos.controller.SettingsController">
+   <children>
+      <Pane prefHeight="65.0" AnchorPane.bottomAnchor="643.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Separator layoutY="65.0" prefWidth="1096.0" />
+            <Label layoutX="28.0" layoutY="10.0" styleClass="heading" stylesheets="@../../../../../assets/css/Styles.css" text="Settings" />
+            <Separator prefWidth="1096.0" />
+         </children>
+      </Pane>
+      <Pane layoutX="74.0" layoutY="105.0" prefHeight="200.0" prefWidth="450.0" style="-fx-background-color: #F0F0F0;">
+         <children>
+            <Label layoutX="66.0" layoutY="40.0" styleClass="RegisterText" stylesheets="@../../../../../assets/css/Styles.css" text="Register Users" textFill="#003168" />
+            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="284.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../assets/images/registerUsers.png" />
+               </image>
+            </ImageView>
+            <JFXButton layoutX="108.0" layoutY="140.0" onAction="#btnRegisterUsersOnAction" prefHeight="40.0" prefWidth="250.0" styleClass="RegisterButton" stylesheets="@../../../../../assets/css/Styles.css" text="Rigiser Users" textFill="WHITE" />
+            <Label layoutX="61.0" layoutY="81.0" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" text="Register the users for system" />
+         </children>
+      </Pane>
+      <Pane layoutX="573.0" layoutY="105.0" prefHeight="200.0" prefWidth="450.0" style="-fx-background-color: #F0F0F0;">
+         <children>
+            <Label layoutX="98.0" layoutY="52.0" styleClass="RegisterText" stylesheets="@../../../../../assets/css/Styles.css" text="Contact Us" textFill="#003168" />
+            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="284.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../assets/images/contactDetails.png" />
+               </image>
+            </ImageView>
+            <JFXButton layoutX="108.0" layoutY="140.0" onAction="#btnViewContactDetailsOnAction" prefHeight="40.0" prefWidth="250.0" styleClass="RegisterButton" stylesheets="@../../../../../assets/css/Styles.css" text="View Contact Details" textFill="WHITE" />
+            <Label layoutX="53.0" layoutY="90.0" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" text="Contact Us for the System Creators" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
