@@ -34,8 +34,8 @@ public class DBConnection {
         jobRoleDTOS.add(new JobRoleDTO(1,"Admin"));
         jobRoleDTOS.add(new JobRoleDTO(2,"Cashier"));
         jobRoleDTOS.add(new JobRoleDTO(3,"Pharmacist"));
-        jobRoleDTOS.add(new JobRoleDTO(3,"Pharmacy Technician"));
-        jobRoleDTOS.add(new JobRoleDTO(3,"Pharmacy Assistant"));
+        jobRoleDTOS.add(new JobRoleDTO(4,"Pharmacy Technician"));
+        jobRoleDTOS.add(new JobRoleDTO(5,"Pharmacy Assistant"));
     }
 
 }
