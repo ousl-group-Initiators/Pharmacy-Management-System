@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane fx:id="OrderDetailsContext" prefHeight="708.0" prefWidth="1096.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ousl.initiators.pos.controller.OrderDetailsController">
+    <children>
+        <Pane prefHeight="65.0" AnchorPane.bottomAnchor="643.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Separator layoutY="65.0" prefWidth="1096.0" />
+                <Label layoutX="28.0" layoutY="10.0" styleClass="heading" stylesheets="@../../../../../assets/css/Styles.css" text="Order Details" />
+                <Separator prefWidth="1096.0" />
+            </children>
+        </Pane>
+        <TableView fx:id="tblOrderDetails" layoutX="31.0" layoutY="95.0" prefHeight="577.0" prefWidth="1035.0">
+            <columns>
+                <TableColumn fx:id="colItemCode" prefWidth="130.0" text="Item Code" />
+                <TableColumn fx:id="colDescription" prefWidth="274.0" text="Description" />
+                <TableColumn fx:id="colUnitPrice" prefWidth="181.0" text="Unit Price" />
+                <TableColumn fx:id="colQty" minWidth="0.0" prefWidth="129.0" text="Qty" />
+                <TableColumn fx:id="colDiscount" minWidth="0.0" prefWidth="161.0" text="Discount" />
+                <TableColumn fx:id="colTotal" minWidth="0.0" prefWidth="159.0" text="Total" />
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>
