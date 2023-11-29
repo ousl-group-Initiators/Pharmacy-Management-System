@@ -84,4 +84,9 @@ public class MainContextController {
     public void logoutOnAction(ActionEvent actionEvent) throws IOException {
         setUi("Login");
     }
+
+    // create Settings button OnAction method to load the dashboard ui
+    public void settingsOnAction(ActionEvent actionEvent) throws IOException {
+        setUi("Settings");
+    }
 }
