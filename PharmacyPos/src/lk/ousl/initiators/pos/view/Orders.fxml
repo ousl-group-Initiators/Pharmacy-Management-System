@@ -4,6 +4,9 @@
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 
 <AnchorPane fx:id="OrdersContext" prefHeight="708.0" prefWidth="1096.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ousl.initiators.pos.controller.OrdersController">
    <children>
@@ -14,5 +17,16 @@
             <Separator prefWidth="1096.0" />
          </children>
       </Pane>
+      <TextField fx:id="txtSearch" layoutX="31.0" layoutY="97.0" prefHeight="40.0" prefWidth="1035.0" promptText="Search Order" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
+      <TableView fx:id="tblOrders" layoutX="31.0" layoutY="165.0" prefHeight="507.0" prefWidth="1035.0">
+         <columns>
+            <TableColumn fx:id="colInvoiceNumber" prefWidth="130.0" text="Invoice Number" />
+            <TableColumn fx:id="colCashierName" prefWidth="264.0" text="Cashier Name" />
+            <TableColumn fx:id="colDate" prefWidth="191.0" text="Date" />
+            <TableColumn fx:id="colTime" minWidth="0.0" prefWidth="169.0" text="Time" />
+            <TableColumn fx:id="colTotal" minWidth="0.0" prefWidth="147.0" text="Total" />
+            <TableColumn fx:id="colOption" minWidth="0.0" prefWidth="133.0" text="Option" />
+         </columns>
+      </TableView>
    </children>
 </AnchorPane>
