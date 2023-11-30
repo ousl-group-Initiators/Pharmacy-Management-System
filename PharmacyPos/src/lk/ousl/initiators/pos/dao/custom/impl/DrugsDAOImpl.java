@@ -35,7 +35,7 @@ public class DrugsDAOImpl implements DrugsDAO {
 
     @Override
     public boolean update(Drugs drugs) throws SQLException, ClassNotFoundException {
-        return CrudUtil.executeUpdate("UPDATE Drugs SET drug_name=?, batch_number=?, MFD=?,EXD=?,drug_quantity=?, unit_price=?, unit_discount=?,Supply_id=?, description=? WHERE drug_id=?",
+        return CrudUtil.executeUpdate("UPDATE Drugs SET drug_name=?, batch_number=?, MFD=?, EXD=?, drug_quantity=?, unit_price=?, unit_discount=?, supply_id=?, description=? WHERE drug_id=?",
                 drugs.getDrug_name(),
                 drugs.getBatch_number(),
                 drugs.getMFD(),
@@ -61,7 +61,7 @@ public class DrugsDAOImpl implements DrugsDAO {
                 rst.getInt("drug_quantity "),
                 rst.getDouble("unit_price "),
                 rst.getDouble("unit_discount"),
-                rst.getString("Supply_id"),
+                rst.getString("supply_id"),
                 rst.getString("description")
         );
     }
@@ -75,8 +75,8 @@ public class DrugsDAOImpl implements DrugsDAO {
                     rst.getString("drug_id"),
                     rst.getString("drug_name"),
                     rst.getString("batch_number"),
-                    rst.getDate("MFD "),
-                    rst.getDate("EXD "),
+                    rst.getDate("MFD"),
+                    rst.getDate("EXD"),
                     rst.getInt("drug_quantity "),
                     rst.getDouble("unit_price "),
                     rst.getDouble("unit_discount"),
@@ -104,10 +104,10 @@ public class DrugsDAOImpl implements DrugsDAO {
                     set.getString("drug_id"),
                     set.getString("drug_name"),
                     set.getString("batch_number"),
-                    set.getDate("MFD "),
-                    set.getDate("EXD "),
-                    set.getInt("drug_quantity "),
-                    set.getDouble("unit_price "),
+                    set.getDate("MFD"),
+                    set.getDate("EXD"),
+                    set.getInt("drug_quantity"),
+                    set.getDouble("unit_price"),
                     set.getDouble("unit_discount"),
                     set.getString("Supply_id"),
                     set.getString("description")
