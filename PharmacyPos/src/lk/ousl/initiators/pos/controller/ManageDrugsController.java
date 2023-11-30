@@ -13,8 +13,11 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import lk.ousl.initiators.pos.bo.BoFactory;
 import lk.ousl.initiators.pos.bo.custom.DrugsBO;
+import lk.ousl.initiators.pos.db.DBConnection;
 import lk.ousl.initiators.pos.dto.DrugsDTO;
 import lk.ousl.initiators.pos.dto.EmployeeDTO;
+import lk.ousl.initiators.pos.dto.JobRoleDTO;
+import lk.ousl.initiators.pos.dto.SupplyIdDTO;
 
 import java.sql.Date;
 import java.sql.SQLException;
@@ -46,22 +49,27 @@ public class ManageDrugsController {
     public TableColumn<DrugsDTO, Double> colUnitPrice;
     public TableColumn<DrugsDTO, Double> colDiscount;
     public TableColumn<DrugsDTO, String> colSupplierId;
+    public TableColumn<EmployeeDTO, Button> colOption;
     public TableColumn<DrugsDTO, String> colDescription;
     private String searchText = "";
 
     private final DrugsBO drugsBO = (DrugsBO) BoFactory.getBoFactory().getBo(BoFactory.BoTypes.Drugs);
 
     public void initialize(){
-        colDrugsId.setCellValueFactory(new PropertyValueFactory<>("drugs_id"));
-        colName.setCellValueFactory(new PropertyValueFactory<>("drug_name "));
+        loadAllSupplyId();
+        clearFields();
+
+        colDrugsId.setCellValueFactory(new PropertyValueFactory<>("drug_id"));
+        colName.setCellValueFactory(new PropertyValueFactory<>("drug_name"));
         colBatchNumber.setCellValueFactory(new PropertyValueFactory<>("batch_number"));
+        colMFD.setCellValueFactory(new PropertyValueFactory<>("MFD"));
+        colEXD.setCellValueFactory(new PropertyValueFactory<>("EXD"));
         colDrugQuantity.setCellValueFactory(new PropertyValueFactory<>("drug_quantity"));
         colUnitPrice.setCellValueFactory(new PropertyValueFactory<>("unit_price"));
         colDiscount.setCellValueFactory(new PropertyValueFactory<>("unit_discount"));
-        colMFD.setCellValueFactory(new PropertyValueFactory<>("MFD "));
-        colEXD.setCellValueFactory(new PropertyValueFactory<>("EXD "));
-        colSupplierId.setCellValueFactory(new PropertyValueFactory<>("Supply_id"));
-        colDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
+        colSupplierId.setCellValueFactory(new PropertyValueFactory<>("supply_id"));
+        colOption.setCellValueFactory(new PropertyValueFactory<>("button"));
+        //colDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
 
         tblDrugs.getSelectionModel().selectedItemProperty().addListener((Observable, oldValue, newValue) -> {
             if (null != newValue) {
@@ -74,6 +82,13 @@ public class ManageDrugsController {
         });
         searchDrugs(searchText);
 
+    }
+
+
+    private void loadAllSupplyId() {
+        for (SupplyIdDTO i : DBConnection.supplyIdDTOS) {
+            cmbSupplierId.getItems().add(i.getSupplyId());
+        }
     }
 
 
@@ -119,6 +134,8 @@ public class ManageDrugsController {
                 if (isUpdatedDrugs) {
                     searchDrugs(searchText);
                     new Alert(Alert.AlertType.INFORMATION, "Drugs Updated !").show();
+
+
                     clearFields();
                 } else {
                     new Alert(Alert.AlertType.WARNING, "Something Wrong!").show();
@@ -177,13 +194,10 @@ public class ManageDrugsController {
         tblDrugs.setItems(drugsDTOS);
     }
 
-
-
     public void btnNewDrugsOnAction(ActionEvent actionEvent) {
         clearFields();
         btnSaveDrugs.setText("Save Drugs");
     }
-
 
     private void setData(DrugsDTO dto) {
         txtDrugsId.setText(dto.getDrug_id());
