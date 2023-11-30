@@ -20,17 +20,18 @@ public class Drugs {
         this.drug_id = drug_id;
         this.drug_name = drug_name;
         this.batch_number = batch_number;
+        this.MFD = MFD;
+        this.EXD = EXD;
         this.drug_quantity = drug_quantity;
         this.unit_price = unit_price;
         this.unit_discount = unit_discount;
-        this.MFD = MFD;
-        this.EXD = EXD;
         this.Supply_id = supply_id;
         this.description = description;
     }
 
 
     public String getDrug_id() {
+
         return drug_id;
     }
 
