@@ -39,11 +39,11 @@ CREATE TABLE Drugs
     drug_id         VARCHAR(50)     NOT NULL,
     drug_name       VARCHAR(100)    NOT NULL,
     batch_number    VARCHAR(50)     NOT NULL,
+    MFD             DATE            NOT NULL,
+    EXD             DATE            NOT NULL,
     drug_quantity   INT             NOT NULL,
     unit_price      DECIMAL(10, 2)  NOT NULL,
     unit_discount   DECIMAL(10, 2)  NOT NULL,
-    MFD             DATE            NOT NULL,
-    EXD             DATE            NOT NULL,
     Supply_id       VARCHAR(50)     NOT NULL,
     description     VARCHAR(350)    NOT NULL,
     CONSTRAINT PRIMARY KEY (drug_id)
