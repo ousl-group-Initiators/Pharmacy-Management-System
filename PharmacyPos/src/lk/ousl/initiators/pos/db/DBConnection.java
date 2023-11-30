@@ -1,6 +1,7 @@
 package lk.ousl.initiators.pos.db;
 
 import lk.ousl.initiators.pos.dto.JobRoleDTO;
+import lk.ousl.initiators.pos.dto.SupplyIdDTO;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -36,6 +37,17 @@ public class DBConnection {
         jobRoleDTOS.add(new JobRoleDTO(3,"Pharmacist"));
         jobRoleDTOS.add(new JobRoleDTO(3,"Pharmacy Technician"));
         jobRoleDTOS.add(new JobRoleDTO(3,"Pharmacy Assistant"));
+    }
+
+
+    public static ArrayList<SupplyIdDTO> supplyIdDTOS = new ArrayList<>();
+
+    static {
+        supplyIdDTOS.add(new SupplyIdDTO(1,"S001"));
+        supplyIdDTOS.add(new SupplyIdDTO(2,"S002"));
+        supplyIdDTOS.add(new SupplyIdDTO(3,"S003"));
+        supplyIdDTOS.add(new SupplyIdDTO(4,"S004"));
+        supplyIdDTOS.add(new SupplyIdDTO(5,"S005"));
     }
 
 }
