@@ -16,6 +16,7 @@ import java.util.ArrayList;
 public class DrugsBOImpl implements DrugsBO {
 
     private final DrugsDAO drugsDAO = (DrugsDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.DRUGS);
+
     @Override
     public boolean saveDrugs(DrugsDTO dto) throws SQLException, ClassNotFoundException {
         return drugsDAO.save(new Drugs(
@@ -34,7 +35,7 @@ public class DrugsBOImpl implements DrugsBO {
 
     @Override
     public boolean updateDrugs(DrugsDTO dto) throws SQLException, ClassNotFoundException {
-        return drugsDAO.save(new Drugs(
+        return drugsDAO.update(new Drugs(
                 dto.getDrug_id(),
                 dto.getDrug_name(),
                 dto.getBatch_number(),
