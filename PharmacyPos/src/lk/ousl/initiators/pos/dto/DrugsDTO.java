@@ -13,7 +13,7 @@ public class DrugsDTO {
     private double unit_discount;
     private Date MFD;
     private Date EXD;
-    private String Supply_id;
+    private String supply_id;
     private String description;
     private javafx.scene.control.Button button;
     public DrugsDTO(){}
@@ -22,12 +22,12 @@ public class DrugsDTO {
         this.drug_id = drug_id;
         this.drug_name = drug_name;
         this.batch_number = batch_number;
+        this.MFD = MFD;
+        this.EXD = EXD;
         this.drug_quantity = drug_quantity;
         this.unit_price = unit_price;
         this.unit_discount = unit_discount;
-        this.MFD = MFD;
-        this.EXD = EXD;
-        this.Supply_id = supply_id;
+        this.supply_id = supply_id;
         this.description = description;
 
     }
@@ -36,12 +36,12 @@ public class DrugsDTO {
         this.drug_id = drug_id;
         this.drug_name = drug_name;
         this.batch_number = batch_number;
+        this.MFD = MFD;
+        this.EXD = EXD;
         this.drug_quantity = drug_quantity;
         this.unit_price = unit_price;
         this.unit_discount = unit_discount;
-        this.MFD = MFD;
-        this.EXD = EXD;
-        this.Supply_id = supply_id;
+        this.supply_id = supply_id;
         this.description = description;
         this.button = button;
     }
@@ -112,11 +112,11 @@ public class DrugsDTO {
     }
 
     public String getSupply_id() {
-        return Supply_id;
+        return supply_id;
     }
 
     public void setSupply_id(String supply_id) {
-        Supply_id = supply_id;
+        supply_id = supply_id;
     }
 
     public String getDescription() {
