@@ -49,6 +49,7 @@
             
         </columns>
       </TableView>
+      <Separator layoutY="1.0" prefWidth="1096.0" />
 
    </children>
 </AnchorPane>
