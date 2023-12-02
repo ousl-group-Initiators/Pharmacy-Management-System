@@ -1,6 +1,7 @@
 package lk.ousl.initiators.pos.db;
 
 import lk.ousl.initiators.pos.dto.JobRoleDTO;
+import lk.ousl.initiators.pos.dto.PaymentMethodDTO;
 import lk.ousl.initiators.pos.dto.SupplyIdDTO;
 
 import java.sql.Connection;
@@ -35,8 +36,8 @@ public class DBConnection {
         jobRoleDTOS.add(new JobRoleDTO(1,"Admin"));
         jobRoleDTOS.add(new JobRoleDTO(2,"Cashier"));
         jobRoleDTOS.add(new JobRoleDTO(3,"Pharmacist"));
-        jobRoleDTOS.add(new JobRoleDTO(3,"Pharmacy Technician"));
-        jobRoleDTOS.add(new JobRoleDTO(3,"Pharmacy Assistant"));
+        jobRoleDTOS.add(new JobRoleDTO(4,"Pharmacy Technician"));
+        jobRoleDTOS.add(new JobRoleDTO(5,"Pharmacy Assistant"));
     }
 
 
@@ -50,4 +51,11 @@ public class DBConnection {
         supplyIdDTOS.add(new SupplyIdDTO(5,"S005"));
     }
 
+    public static ArrayList<PaymentMethodDTO> paymentMethodDTOS = new ArrayList<>();
+
+    static {
+        paymentMethodDTOS.add(new PaymentMethodDTO(1,"Cash"));
+        paymentMethodDTOS.add(new PaymentMethodDTO(2,"Credit Card"));
+        paymentMethodDTOS.add(new PaymentMethodDTO(3,"Debit Card"));
+    }
 }
