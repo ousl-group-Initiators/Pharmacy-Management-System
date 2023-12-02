@@ -37,7 +37,7 @@
          <left>
             <ScrollPane prefHeight="200.0" prefWidth="270.0" BorderPane.alignment="CENTER">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="660.0" prefWidth="268.0">
+                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="728.0" prefWidth="268.0">
                      <children>
                         <Pane prefHeight="65.0" style="-fx-background-color: #ffffff;" />
                         <JFXButton alignment="CENTER_RIGHT" graphicTextGap="20.0" layoutY="65.0" onAction="#dashboardOnAction" prefHeight="65.0" prefWidth="270.0" styleClass="dashboard_button_color" stylesheets="@../../../../../assets/css/Styles.css" text="Dashboard                    ">
@@ -160,7 +160,22 @@
                               <MotionBlur radius="15.0" />
                            </effect>
                         </JFXButton>
-                        <JFXButton alignment="CENTER_RIGHT" graphicTextGap="26.0" layoutY="584.0" onAction="#logoutOnAction" prefHeight="65.0" prefWidth="270.0" styleClass="dashboard_button_color" stylesheets="@../../../../../assets/css/Styles.css" text="Logout                         " textFill="#d00000">
+                        <JFXButton alignment="CENTER_RIGHT" graphicTextGap="26.0" layoutY="584.0" onAction="#settingsOnAction" prefHeight="65.0" prefWidth="270.0" styleClass="dashboard_button_color" stylesheets="@../../../../../assets/css/Styles.css" text="Settings                       ">
+                           <graphic>
+                              <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../assets/images/Settings.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <MotionBlur radius="15.0" />
+                           </effect>
+                        </JFXButton>
+                        <JFXButton alignment="CENTER_RIGHT" graphicTextGap="26.0" layoutY="649.0" onAction="#logoutOnAction" prefHeight="65.0" prefWidth="270.0" styleClass="dashboard_button" stylesheets="@../../../../../assets/css/Styles.css" text="Logout                         " textFill="#d00000">
                            <graphic>
                               <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                                  <image>

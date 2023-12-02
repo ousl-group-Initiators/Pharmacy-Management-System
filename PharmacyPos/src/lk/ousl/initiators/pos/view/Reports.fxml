@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
@@ -12,6 +15,45 @@
             <Separator layoutY="65.0" prefWidth="1096.0" />
             <Label layoutX="28.0" layoutY="10.0" styleClass="heading" stylesheets="@../../../../../assets/css/Styles.css" text="Reports" />
             <Separator prefWidth="1096.0" />
+         </children>
+      </Pane>
+      <Pane layoutX="70.0" layoutY="84.0" prefHeight="290.0" prefWidth="450.0" style="-fx-background-color: #F0F0F0;">
+         <children>
+            <Label layoutX="71.0" layoutY="41.0" styleClass="DailySale" stylesheets="@../../../../../assets/css/Styles.css" text="Daily Sales" textFill="#008a00" />
+            <ImageView fitHeight="120.0" fitWidth="120.0" layoutX="260.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../assets/images/dailySale.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="lblDate" layoutX="95.0" layoutY="93.0" styleClass="DateLabel" stylesheets="@../../../../../assets/css/Styles.css" text="2023-11-20" />
+            <Label layoutX="150.0" layoutY="159.0" styleClass="total" stylesheets="@../../../../../assets/css/Styles.css" text="Rs." />
+            <Label fx:id="lblDailySalesTotal" layoutX="203.0" layoutY="159.0" styleClass="total" stylesheets="@../../../../../assets/css/Styles.css" text="00.00" />
+            <JFXButton layoutX="150.0" layoutY="234.0" onAction="#btnViewDailySalesOnAction" prefHeight="40.0" prefWidth="150.0" styleClass="addButton" stylesheets="@../../../../../assets/css/Styles.css" text="View Daily Sales" textFill="WHITE" />
+         </children>
+      </Pane>
+      <Pane layoutX="577.0" layoutY="84.0" prefHeight="290.0" prefWidth="450.0" style="-fx-background-color: #F0F0F0;">
+         <children>
+            <Label layoutX="72.0" layoutY="52.0" styleClass="DailySale" stylesheets="@../../../../../assets/css/Styles.css" text="Total Sales" textFill="#0a0279" />
+            <ImageView fitHeight="120.0" fitWidth="120.0" layoutX="274.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../assets/images/totalSales.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="120.0" layoutY="177.0" styleClass="totalSale" stylesheets="@../../../../../assets/css/Styles.css" text="Rs." textFill="#0a0279" />
+            <Label fx:id="bllTotalSalesTotal" layoutX="198.0" layoutY="177.0" styleClass="totalSale" stylesheets="@../../../../../assets/css/Styles.css" text="00.00" textFill="#0a0279" />
+         </children>
+      </Pane>
+      <Pane layoutX="323.0" layoutY="398.0" prefHeight="260.0" prefWidth="450.0" style="-fx-background-color: #F0F0F0;">
+         <children>
+            <Label layoutX="72.0" layoutY="56.0" styleClass="DailySale" stylesheets="@../../../../../assets/css/Styles.css" text="Monthly Sale" textFill="#9ca100" />
+            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="289.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../assets/images/Monthly.jpg" />
+               </image>
+            </ImageView>
+            <Label fx:id="lblMonth" layoutX="118.0" layoutY="108.0" styleClass="DateLabel" stylesheets="@../../../../../assets/css/Styles.css" text="November" />
+            <Label layoutX="153.0" layoutY="182.0" styleClass="total" stylesheets="@../../../../../assets/css/Styles.css" text="Rs." textFill="#9ca100" />
+            <Label fx:id="lblMonthlySalesTotal" layoutX="206.0" layoutY="182.0" styleClass="total" stylesheets="@../../../../../assets/css/Styles.css" text="00.00" textFill="#9ca100" />
          </children>
       </Pane>
    </children>

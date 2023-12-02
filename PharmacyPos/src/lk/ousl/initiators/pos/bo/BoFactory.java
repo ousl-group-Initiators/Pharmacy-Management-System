@@ -17,8 +17,9 @@ public class BoFactory {
     }
 
     public enum BoTypes{
-        Employee,Supplier
+        Employee,Supplier,Drugs,LOGIN,ORDER
     }
+
 
     public SuperBO getBo(BoTypes types){
         switch (types){
@@ -26,6 +27,12 @@ public class BoFactory {
                 return new EmployeeBOImpl(); //SuperBO superBO = new EmployeeBoImpl();
             case Supplier:
                 return new SupplierBOImpl(); //SuperBO superBO = new SupplierBoImpl();
+            case Drugs:
+                 return new DrugsBOImpl(); //SuperBO superBO = new DrugsBoImpl();
+            case LOGIN:
+                return new LoginBOImpl();
+            case ORDER:
+                return new OrderBOImpl();
             default:
                 return null;
         }

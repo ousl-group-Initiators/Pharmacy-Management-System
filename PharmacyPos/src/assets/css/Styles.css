@@ -99,3 +99,92 @@
     -fx-border-radius: 10px;
     -fx-font-weight: bold;
 }
+
+.total{
+    -fx-font-family: "Roboto", "Segoe UI", sans-serif;
+    -fx-font-size: 35px;
+    -fx-font-weight: bold;
+}
+
+.viewOrder{
+    -fx-font-family: "Roboto", "Segoe UI", sans-serif;
+    -fx-font-size: 14px;
+    -fx-background-color: #007bff;
+    -fx-border-radius: 10px;
+    -fx-font-weight: bold;
+}
+
+.viewInventory{
+    -fx-font-family: "Roboto", "Segoe UI", sans-serif;
+    -fx-font-size: 14px;
+    -fx-background-color: #ffa500;
+    -fx-border-radius: 10px;
+    -fx-font-weight: bold;
+}
+
+.PayText{
+    -fx-font-family: "Roboto", "Segoe UI", sans-serif;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.PayLabel{
+    -fx-font-family: "Roboto", "Segoe UI", sans-serif;
+    -fx-font-size: 16px;
+}
+
+.PlaceOrder{
+    -fx-font-family: "Roboto", "Segoe UI", sans-serif;
+    -fx-font-size: 18px;
+    -fx-background-color: #dc3545;
+    -fx-border-radius: 10px;
+    -fx-font-weight: bold;
+}
+
+.CancelOrder{
+    -fx-font-family: "Roboto", "Segoe UI", sans-serif;
+    -fx-font-size: 14px;
+    -fx-background-color: #808080;
+    -fx-border-radius: 10px;
+    -fx-font-weight: bold;
+}
+
+.Logout{
+    -fx-font-family: "Roboto", "Segoe UI", sans-serif;
+    -fx-font-size: 14px;
+    -fx-background-color: #FF0000;
+    -fx-border-radius: 10px;
+    -fx-font-weight: bold;
+}
+
+.DailySale{
+    -fx-font-family: "Roboto", "Segoe UI", sans-serif;
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+}
+
+.DateLabel{
+    -fx-font-family: "Roboto", "Segoe UI", sans-serif;
+    -fx-font-size: 20px;
+}
+
+.totalSale{
+    -fx-font-family: "Roboto", "Segoe UI", sans-serif;
+    -fx-font-size: 50px;
+    -fx-font-weight: bold;
+}
+
+.RegisterText{
+    -fx-font-family: "Roboto", "Segoe UI", sans-serif;
+    -fx-font-size: 25px;
+    -fx-font-weight: bold;
+}
+
+.RegisterButton{
+    -fx-font-family: "Roboto", "Segoe UI", sans-serif;
+    -fx-font-size: 14px;
+    -fx-background-color: #003168;
+    -fx-border-radius: 10px;
+    -fx-font-weight: bold;
+}
+

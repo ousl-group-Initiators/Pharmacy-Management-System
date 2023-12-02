@@ -63,7 +63,8 @@ public class MainContextController {
     }
 
     // create ManageDrugs button OnAction method to load the dashboard ui
-    public void manageDrugsOnAction(ActionEvent actionEvent) {
+    public void manageDrugsOnAction(ActionEvent actionEvent) throws IOException {
+        setUi("ManageDrugs");
     }
 
     // create ManageInventory button OnAction method to load the dashboard ui
@@ -84,5 +85,10 @@ public class MainContextController {
     // create Logout button OnAction method to load the dashboard ui
     public void logoutOnAction(ActionEvent actionEvent) throws IOException {
         setUi("Login");
+    }
+
+    // create Settings button OnAction method to load the dashboard ui
+    public void settingsOnAction(ActionEvent actionEvent) throws IOException {
+        setUi("Settings");
     }
 }

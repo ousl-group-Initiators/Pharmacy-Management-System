@@ -1,5 +1,6 @@
 package lk.ousl.initiators.pos.controller;
 
+
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextArea;
@@ -232,6 +233,3 @@ public class ManageSuppliersController {
     }
 
 }
-
-
-
