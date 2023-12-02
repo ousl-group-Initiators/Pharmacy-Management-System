@@ -1,6 +1,8 @@
 package lk.ousl.initiators.pos.dao;
 
 
+import lk.ousl.initiators.pos.dao.custom.impl.EmployeeDAOImpl;
+import lk.ousl.initiators.pos.dao.custom.impl.SupplierDAOImpl;
 import lk.ousl.initiators.pos.dao.custom.impl.*;
 
 public class DAOFactory {
@@ -18,7 +20,7 @@ public class DAOFactory {
     }
 
     public enum DAOTypes{
-        EMPLOYEE,DRUGS,LOGIN,ORDER,ORDERDETAILS
+        EMPLOYEE,SUPPLIER,DRUGS,LOGIN,ORDER,ORDERDETAILS
     }
 
     // factory method
@@ -26,6 +28,8 @@ public class DAOFactory {
         switch (types){
             case EMPLOYEE:
                 return new EmployeeDAOImpl();
+            case SUPPLIER:
+                return new SupplierDAOImpl();
             case DRUGS:
                 return new DrugsDAOImpl();
             case LOGIN:

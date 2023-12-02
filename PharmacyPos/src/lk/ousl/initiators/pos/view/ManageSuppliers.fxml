@@ -30,8 +30,8 @@
        <DatePicker fx:id="dateDateOfBirth" layoutX="28.0" layoutY="275.0" prefHeight="30.0" prefWidth="300.0" promptText="Date of Birth" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
        <JFXTextArea fx:id="txtAddress" focusColor="#419043" labelFloat="true" layoutX="398.0" layoutY="209.0" prefHeight="87.0" prefWidth="300.0" promptText="Address" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
        <JFXTextArea fx:id="txtDescription" focusColor="#419043" labelFloat="true" layoutX="760.0" layoutY="151.0" prefHeight="145.0" prefWidth="300.0" promptText="Description Add Here" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
-       <JFXButton fx:id="btnSaveSupplier" layoutX="860.0" layoutY="339.0" onAction="#btnSaveSupplierOnAction" prefHeight="40.0" prefWidth="200.0" styleClass="addButton" stylesheets="@../../../../../assets/css/Styles.css" text="Save Employee" textFill="WHITE" />
-       <JFXButton fx:id="btnNewSupplier" layoutX="648.0" layoutY="339.0" onAction="#btnNewSupplierOnAction" prefHeight="40.0" prefWidth="200.0" styleClass="updateButton" stylesheets="@../../../../../assets/css/Styles.css" text="+ New Employee" textFill="WHITE" />
+       <JFXButton fx:id="btnSaveSupplier" layoutX="860.0" layoutY="339.0" onAction="#btnSaveSupplierOnAction" prefHeight="40.0" prefWidth="200.0" styleClass="addButton" stylesheets="@../../../../../assets/css/Styles.css" text="Save Supplier" textFill="WHITE" />
+       <JFXButton fx:id="btnNewSupplier" layoutX="648.0" layoutY="339.0" onAction="#btnNewSupplierOnAction" prefHeight="40.0" prefWidth="200.0" styleClass="updateButton" stylesheets="@../../../../../assets/css/Styles.css" text="+ New Supplier" textFill="WHITE" />
        <TableView fx:id="tblSupplier" layoutX="28.0" layoutY="413.0" prefHeight="265.0" prefWidth="1035.0" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css">
         <columns>
           <TableColumn fx:id="colNic" prefWidth="104.0" text="Supplier NIC" />

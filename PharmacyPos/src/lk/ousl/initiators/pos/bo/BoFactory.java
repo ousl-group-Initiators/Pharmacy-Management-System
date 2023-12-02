@@ -17,7 +17,7 @@ public class BoFactory {
     }
 
     public enum BoTypes{
-        Employee,Drugs,LOGIN,ORDER
+        Employee,Supplier,Drugs,LOGIN,ORDER
     }
 
 
@@ -25,6 +25,8 @@ public class BoFactory {
         switch (types){
             case Employee:
                 return new EmployeeBOImpl(); //SuperBO superBO = new EmployeeBoImpl();
+            case Supplier:
+                return new SupplierBOImpl(); //SuperBO superBO = new SupplierBoImpl();
             case Drugs:
                  return new DrugsBOImpl(); //SuperBO superBO = new DrugsBoImpl();
             case LOGIN:
