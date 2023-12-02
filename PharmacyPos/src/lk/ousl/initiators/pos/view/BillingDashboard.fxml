@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
@@ -9,8 +10,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-
-<?import com.jfoenix.controls.JFXComboBox?>
 <AnchorPane prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ousl.initiators.pos.controller.BillingDashboardController">
    <children>
       <BorderPane layoutX="39.0" layoutY="45.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -18,7 +17,7 @@
             <AnchorPane prefHeight="65.0" prefWidth="1366.0" BorderPane.alignment="CENTER">
                <children>
                   <Separator layoutY="65.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="65.0" />
-                  <Label layoutX="30.0" layoutY="22.0" styleClass="normal_font" stylesheets="@../../../../../assets/css/Styles.css" text="2023-08-21  00.00.00" />
+                  <Label fx:id="lblDateTime" layoutX="30.0" layoutY="22.0" styleClass="normal_font" stylesheets="@../../../../../assets/css/Styles.css" text="2023-08-21  00.00.00" />
                   <Separator layoutX="1014.0" layoutY="2.0" orientation="VERTICAL" prefHeight="65.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="1014.0" AnchorPane.rightAnchor="342.0" AnchorPane.topAnchor="0.0" />
                   <Label layoutX="800.0" layoutY="22.0" styleClass="normal_font" stylesheets="@../../../../../assets/css/Styles.css" text="Cashier Name &amp; Number" />
                    <Label layoutX="1123.0" layoutY="19.0" styleClass="font" stylesheets="@../../../../../assets/css/Styles.css" text="Payment Details" />
@@ -28,7 +27,7 @@
          <bottom>
             <AnchorPane prefHeight="70.0" prefWidth="1366.0" BorderPane.alignment="CENTER">
                <children>
-                  <Separator prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                  <Separator layoutY="6.0" prefHeight="0.0" prefWidth="1366.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
                    <Label layoutX="630.0" layoutY="12.0" text="Powered by Initiators" />
                </children>
             </AnchorPane>
@@ -45,45 +44,45 @@
                    <Label layoutX="25.0" layoutY="345.0" styleClass="PayText" stylesheets="@../../../../../assets/css/Styles.css" text="Cash : " />
                    <Label layoutX="25.0" layoutY="395.0" styleClass="PayText" stylesheets="@../../../../../assets/css/Styles.css" text="Balance : " />
                    <Separator layoutX="6.0" layoutY="209.0" prefHeight="0.0" prefWidth="341.0" />
-                   <Label fx:id="lblDate" layoutX="91.0" layoutY="61.0" styleClass="PayLabel" stylesheets="@../../../../../assets/css/Styles.css" text="2023-11-20" />
-                   <Label fx:id="lblTime" layoutX="91.0" layoutY="106.0" styleClass="PayLabel" stylesheets="@../../../../../assets/css/Styles.css" text="00.00.00" />
-                   <Label fx:id="lblCashierName" layoutX="157.0" layoutY="156.0" styleClass="PayLabel" stylesheets="@../../../../../assets/css/Styles.css" text="K H S N Udayanga" />
-                   <JFXComboBox fx:id="comboPaymentOption" layoutX="177.0" layoutY="240.0" prefHeight="25.0" prefWidth="150.0" />
-                   <Label fx:id="lblTotalAmount" layoutX="158.0" layoutY="295.0" styleClass="PayLabel" stylesheets="@../../../../../assets/css/Styles.css" text="00.00" />
-                   <Label fx:id="lblCash" layoutX="158.0" layoutY="345.0" styleClass="PayLabel" stylesheets="@../../../../../assets/css/Styles.css" text="00.00" />
-                   <Label fx:id="lblBalance" layoutX="158.0" layoutY="395.0" styleClass="PayLabel" stylesheets="@../../../../../assets/css/Styles.css" text="00.00" />
+                   <Label fx:id="lblDate" disable="true" layoutX="91.0" layoutY="61.0" styleClass="PayLabel" stylesheets="@../../../../../assets/css/Styles.css" text="2023-11-20" />
+                   <Label fx:id="lblTime" disable="true" layoutX="91.0" layoutY="106.0" styleClass="PayLabel" stylesheets="@../../../../../assets/css/Styles.css" text="00.00.00" />
+                   <Label fx:id="lblCashierName" disable="true" layoutX="157.0" layoutY="156.0" styleClass="PayLabel" stylesheets="@../../../../../assets/css/Styles.css" text="K H S N Udayanga" />
+                   <JFXComboBox fx:id="cmbPaymentOption" layoutX="177.0" layoutY="240.0" prefHeight="25.0" prefWidth="150.0" promptText="Select Payment Method" />
+                   <Label fx:id="lblTotalAmount" disable="true" layoutX="158.0" layoutY="295.0" styleClass="PayLabel" stylesheets="@../../../../../assets/css/Styles.css" text="00.00" />
+                   <Label fx:id="lblBalance" disable="true" layoutX="158.0" layoutY="395.0" styleClass="PayLabel" stylesheets="@../../../../../assets/css/Styles.css" text="00.00" />
                    <Separator layoutX="7.0" layoutY="460.0" prefHeight="0.0" prefWidth="341.0" />
                    <JFXButton layoutX="28.0" layoutY="485.0" onAction="#btnPlaceOrderOnAction" prefHeight="50.0" prefWidth="300.0" styleClass="PlaceOrder" stylesheets="@../../../../../assets/css/Styles.css" text="Place Order" textFill="WHITE" />
                    <JFXButton layoutX="28.0" layoutY="549.0" onAction="#btnCancelOrderOnAction" prefHeight="40.0" prefWidth="300.0" styleClass="CancelOrder" stylesheets="@../../../../../assets/css/Styles.css" text="Cancel Order" textFill="WHITE" />
                    <Label layoutX="25.0" layoutY="16.0" styleClass="PayText" stylesheets="@../../../../../assets/css/Styles.css" text="Invoice No : " />
-                   <Label fx:id="lblInvoiceNo" layoutX="134.0" layoutY="16.0" styleClass="PayLabel" stylesheets="@../../../../../assets/css/Styles.css" text="00000001" />
+                   <Label fx:id="lblInvoiceNo" disable="true" layoutX="134.0" layoutY="16.0" styleClass="PayLabel" stylesheets="@../../../../../assets/css/Styles.css" text="00000001" />
+                  <JFXTextField fx:id="txtCash" layoutX="157.0" layoutY="345.0" prefHeight="25.0" prefWidth="166.0" />
                </children>
             </AnchorPane>
          </right>
          <center>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <AnchorPane prefHeight="647.0" prefWidth="1016.0" BorderPane.alignment="CENTER">
                <children>
                   <AnchorPane prefHeight="80.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <Separator layoutY="65.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="77.0" />
-                        <JFXTextField focusColor="#419043" labelFloat="true" layoutX="14.0" layoutY="40.0" prefHeight="30.0" prefWidth="110.0" promptText="Item Code" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="30.0" />
-                        <JFXTextField disable="true" focusColor="#419043" labelFloat="true" layoutX="146.0" layoutY="30.0" prefHeight="30.0" prefWidth="220.0" promptText="Description" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
-                        <JFXTextField disable="true" focusColor="#419043" labelFloat="true" layoutX="381.0" layoutY="30.0" prefHeight="30.0" prefWidth="110.0" promptText="Unit Price" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
-                        <JFXTextField disable="true" focusColor="#419043" labelFloat="true" layoutX="507.0" layoutY="30.0" prefHeight="30.0" prefWidth="90.0" promptText="QTY On Hand" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
-                        <JFXTextField disable="true" focusColor="#419043" labelFloat="true" layoutX="612.0" layoutY="30.0" prefHeight="30.0" prefWidth="100.0" promptText="Discount" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
-                        <JFXTextField focusColor="#419043" labelFloat="true" layoutX="729.0" layoutY="30.0" prefHeight="30.0" prefWidth="100.0" promptText="QTY" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
-                        <JFXButton layoutX="850.0" layoutY="20.0" prefHeight="40.0" prefWidth="150.0" styleClass="addButton" stylesheets="@../../../../../assets/css/Styles.css" text="Add to Cart" textFill="WHITE" />
+                        <JFXTextField fx:id="lblDescription" disable="true" focusColor="#419043" labelFloat="true" layoutX="170.0" layoutY="30.0" prefHeight="30.0" prefWidth="196.0" promptText="Description" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
+                        <JFXTextField fx:id="lblUnitPrice" disable="true" focusColor="#419043" labelFloat="true" layoutX="381.0" layoutY="30.0" prefHeight="30.0" prefWidth="110.0" promptText="Unit Price" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
+                        <JFXTextField fx:id="lblQtyOnHand" disable="true" focusColor="#419043" labelFloat="true" layoutX="507.0" layoutY="30.0" prefHeight="30.0" prefWidth="90.0" promptText="QTY On Hand" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
+                        <JFXTextField fx:id="lblDiscount" disable="true" focusColor="#419043" labelFloat="true" layoutX="612.0" layoutY="30.0" prefHeight="30.0" prefWidth="100.0" promptText="Discount" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
+                        <JFXTextField fx:id="txtQty" focusColor="#419043" labelFloat="true" layoutX="729.0" layoutY="30.0" prefHeight="30.0" prefWidth="100.0" promptText="QTY" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
+                        <JFXButton fx:id="btnAddToCart" layoutX="850.0" layoutY="20.0" prefHeight="40.0" prefWidth="150.0" styleClass="addButton" stylesheets="@../../../../../assets/css/Styles.css" text="Add to Cart" textFill="WHITE" />
+                        <JFXComboBox fx:id="cmbItemCode" layoutX="14.0" layoutY="35.0" prefHeight="25.0" prefWidth="140.0" promptText="Item Code" />
                      </children>
                   </AnchorPane>
                    <TableView fx:id="tblBillingTable" layoutX="15.0" layoutY="100.0" prefHeight="399.0" prefWidth="985.0">
                     <columns>
-                      <TableColumn prefWidth="94.0" text="Item Code" />
-                      <TableColumn prefWidth="244.0" text="Description" />
-                        <TableColumn prefWidth="124.0" text="Unit Price" />
-                        <TableColumn prefWidth="113.0" text="QTY" />
-                        <TableColumn prefWidth="115.0" text="Discount" />
-                        <TableColumn prefWidth="172.0" text="Total" />
-                        <TableColumn prefWidth="122.0" text="Option" />
+                      <TableColumn fx:id="colItemCode" prefWidth="94.0" text="Item Code" />
+                      <TableColumn fx:id="colDescription" prefWidth="244.0" text="Description" />
+                        <TableColumn fx:id="colUnitPrice" prefWidth="124.0" text="Unit Price" />
+                        <TableColumn fx:id="colQty" prefWidth="113.0" text="QTY" />
+                        <TableColumn fx:id="colDiscount" prefWidth="115.0" text="Discount" />
+                        <TableColumn fx:id="colTotal" prefWidth="172.0" text="Total" />
+                        <TableColumn fx:id="colOption" prefWidth="122.0" text="Option" />
                     </columns>
                   </TableView>
                    <Label layoutX="18.0" layoutY="514.0" styleClass="total" stylesheets="@../../../../../assets/css/Styles.css" text="Total : " />

@@ -17,7 +17,7 @@ public class BoFactory {
     }
 
     public enum BoTypes{
-        Employee,Drugs
+        Employee,Drugs,LOGIN,ORDER
     }
 
 
@@ -27,6 +27,10 @@ public class BoFactory {
                 return new EmployeeBOImpl(); //SuperBO superBO = new EmployeeBoImpl();
             case Drugs:
                  return new DrugsBOImpl(); //SuperBO superBO = new DrugsBoImpl();
+            case LOGIN:
+                return new LoginBOImpl();
+            case ORDER:
+                return new OrderBOImpl();
             default:
                 return null;
         }

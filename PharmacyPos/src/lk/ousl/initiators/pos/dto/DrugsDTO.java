@@ -16,7 +16,6 @@ public class DrugsDTO {
     private String supply_id;
     private String description;
     private javafx.scene.control.Button button;
-    public DrugsDTO(){}
 
     public DrugsDTO(String drug_id, String drug_name, String batch_number, Date MFD, Date EXD,int drug_quantity, double unit_price, double unit_discount,  String supply_id, String description) {
         this.drug_id = drug_id;
