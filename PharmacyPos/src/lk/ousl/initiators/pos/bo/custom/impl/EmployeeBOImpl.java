@@ -1,7 +1,6 @@
 package lk.ousl.initiators.pos.bo.custom.impl;
 
 import lk.ousl.initiators.pos.bo.custom.EmployeeBO;
-import lk.ousl.initiators.pos.dao.CrudDAO;
 import lk.ousl.initiators.pos.dao.DAOFactory;
 import lk.ousl.initiators.pos.dao.custom.EmployeeDAO;
 import lk.ousl.initiators.pos.dto.EmployeeDTO;
