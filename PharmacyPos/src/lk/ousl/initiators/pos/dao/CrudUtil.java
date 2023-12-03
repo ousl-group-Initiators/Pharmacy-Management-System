@@ -26,4 +26,5 @@ public class CrudUtil {
     public static ResultSet executeQuery(String sql, Object... args) throws SQLException, ClassNotFoundException {
         return getPreparedStatement(sql, args).executeQuery();
     }
+
 }
