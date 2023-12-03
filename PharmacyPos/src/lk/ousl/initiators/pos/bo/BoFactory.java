@@ -17,13 +17,15 @@ public class BoFactory {
     }
 
     public enum BoTypes{
-        Employee
+        Employee, Item
     }
 
     public SuperBO getBo(BoTypes types){
         switch (types){
             case Employee:
                 return new EmployeeBOImpl(); //SuperBO superBO = new EmployeeBoImpl();
+            case Item:
+                return new ItemBOImpl(); //SuperBO superBO = new ItemBoImpl();
             default:
                 return null;
         }
