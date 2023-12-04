@@ -142,6 +142,20 @@ public class BillingDashboardController {
                 txtQty.clear();
             }
         });
+
+        tblBillingTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, selectedOrderDetail) -> {
+            if (selectedOrderDetail != null) {
+                cmbItemCode.setDisable(true);
+                cmbItemCode.setValue(selectedOrderDetail.getCode());
+                btnAddToCart.setText("Update to Cart");
+                txtQty.setText(selectedOrderDetail.getQty() + "");
+            } else {
+                btnAddToCart.setText("Add to Cart");
+                cmbItemCode.setDisable(false);
+                cmbItemCode.getSelectionModel().clearSelection();
+                txtQty.clear();
+            }
+        });
     }
 
     // Load All DrugsIds
@@ -267,6 +281,7 @@ public class BillingDashboardController {
     }
 
     public void btnPlaceOrderOnAction(ActionEvent actionEvent) {
+//        calculateBalance();
         boolean b = saveOrder(orderId,
                 lblCashierName.getText(),
                 java.sql.Date.valueOf(lblDate.getText()),
@@ -289,6 +304,7 @@ public class BillingDashboardController {
     public boolean saveOrder(String invoice_number, String cashier_name, Date date, Time time, double total, List<OrderDetailsDTO> orderDetails) {
         try {
             OrderDTO orderDTO = new OrderDTO(invoice_number, cashier_name, (java.sql.Date) date,  time, total, orderDetails);
+            System.out.println("Print - " + orderDTO);
             return orderBO.purchaseOrder(orderDTO);
 
         } catch (ClassNotFoundException | SQLException e) {
