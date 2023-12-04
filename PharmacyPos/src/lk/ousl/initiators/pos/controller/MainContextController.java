@@ -1,19 +1,28 @@
 package lk.ousl.initiators.pos.controller;
 
 import javafx.animation.Animation;
+import javafx.animation.FadeTransition;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 import javafx.util.Duration;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Objects;
+import java.util.Optional;
 
 public class MainContextController {
     public Label lblDateTime;
@@ -83,8 +92,24 @@ public class MainContextController {
     }
 
     // create Logout button OnAction method to load the dashboard ui
-    public void logoutOnAction(ActionEvent actionEvent) throws IOException {
-        setUi("Login");
+    public void logoutOnAction(ActionEvent event) throws IOException {
+        try {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure  want to Logout this System ?", ButtonType.YES, ButtonType.NO);
+            Optional<ButtonType> buttonType = alert.showAndWait();
+            if (buttonType.get() == ButtonType.YES) {
+                Stage stage = (Stage) mainContext.getScene().getWindow();
+                stage.setScene(new Scene(FXMLLoader.load(Objects.requireNonNull(getClass().getResource("../view/Login.fxml")))));
+                stage.centerOnScreen();
+                stage.setResizable(false);
+
+                FadeTransition fadeTransition = new FadeTransition(Duration.millis(2500));
+                fadeTransition.setFromValue(1.0);
+                fadeTransition.setToValue(1.0);
+                fadeTransition.play();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     // create Settings button OnAction method to load the dashboard ui

@@ -15,9 +15,6 @@ public class OrderDTO {
     private javafx.scene.control.Button button;
     private List<OrderDetailsDTO> orderDetails;
 
-    public OrderDTO() {
-    }
-
     public OrderDTO(String invoice_number, String cashier_name, Date date, Time time, double total, Button button, List<OrderDetailsDTO> orderDetails) {
         this.invoice_number = invoice_number;
         this.cashier_name = cashier_name;
@@ -25,6 +22,15 @@ public class OrderDTO {
         this.time = time;
         this.total = total;
         this.button = button;
+        this.orderDetails = orderDetails;
+    }
+
+    public OrderDTO(String invoice_number, String cashier_name, Date date, Time time, double total, List<OrderDetailsDTO> orderDetails) {
+        this.invoice_number = invoice_number;
+        this.cashier_name = cashier_name;
+        this.date = date;
+        this.time = time;
+        this.total = total;
         this.orderDetails = orderDetails;
     }
 

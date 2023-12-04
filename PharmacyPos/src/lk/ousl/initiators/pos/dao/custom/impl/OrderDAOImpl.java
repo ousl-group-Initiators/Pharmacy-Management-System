@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class OrderDAOImpl implements OrderDAO {
     @Override
     public boolean save(Orders orders) throws SQLException, ClassNotFoundException {
-        return CrudUtil.executeUpdate("INSERT INTO orders VALUES (?,?,?,?,?)",
+        return CrudUtil.executeUpdate("INSERT INTO `Order` VALUES (?,?,?,?,?)",
                 orders.getInvoice_number(),
                 orders.getCashier_name(),
                 orders.getDate(),
@@ -34,8 +34,8 @@ public class OrderDAOImpl implements OrderDAO {
     }
 
     @Override
-    public Orders search(String s) throws SQLException, ClassNotFoundException {
-        ResultSet rst = CrudUtil.executeQuery("SELECT * FROM Order WHERE invoice_number=?", s);
+    public Orders search(String id) throws SQLException, ClassNotFoundException {
+        ResultSet rst = CrudUtil.executeQuery("SELECT * FROM `Order` WHERE invoice_number=?", id);
         rst.next();
         return new Orders(
                 rst.getString("invoice_number"),
@@ -49,7 +49,7 @@ public class OrderDAOImpl implements OrderDAO {
     @Override
     public ArrayList<Orders> getAll() throws SQLException, ClassNotFoundException {
         ArrayList<Orders> allOrders = new ArrayList<>();
-        ResultSet rst = CrudUtil.executeQuery("SELECT * FROM Order");
+        ResultSet rst = CrudUtil.executeQuery("SELECT * FROM `Order`");
         while (rst.next()) {
             allOrders.add(new Orders(
                     rst.getString("invoice_number"),
@@ -64,12 +64,12 @@ public class OrderDAOImpl implements OrderDAO {
 
     @Override
     public boolean ifOrderExist(String oid) throws SQLException, ClassNotFoundException {
-        return CrudUtil.executeQuery("SELECT invoice_number FROM Order WHERE invoice_number=?",oid).next();
+        return CrudUtil.executeQuery("SELECT invoice_number FROM `Order` WHERE invoice_number=?",oid).next();
     }
 
     @Override
     public String generateNewOrderId() throws SQLException, ClassNotFoundException {
-        ResultSet rst = CrudUtil.executeQuery("SELECT invoice_number FROM Order ORDER BY invoice_number DESC LIMIT 1;");
-        return rst.next() ? String.format("I%03d", (Integer.parseInt(rst.getString("orderId").replace("I", "")) + 1)) : "000001";
+        ResultSet rst = CrudUtil.executeQuery("SELECT invoice_number FROM `Order` ORDER BY invoice_number DESC LIMIT 1");
+        return rst.next() ? String.format("OD%03d",(Integer.parseInt(rst.getString(" ").replace(" ",""))+1)):"00001";
     }
 }

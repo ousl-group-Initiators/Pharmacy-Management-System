@@ -51,18 +51,13 @@ public class DrugsDAOImpl implements DrugsDAO {
 
     @Override
     public Drugs search(String id) throws SQLException, ClassNotFoundException {
-        ResultSet rst = CrudUtil.executeQuery("SELECT * FROM Drugs WHERE drug_id LIKE? || name LIKE? || batch_number LIKE?", id);
+        ResultSet rst = CrudUtil.executeQuery("SELECT * FROM Drugs WHERE drug_id = ?", id);
         rst.next();
         return new Drugs(id,
                 rst.getString("drug_name"),
-                rst.getString("batch_number"),
-                rst.getDate("MFD "),
-                rst.getDate("EXD "),
-                rst.getInt("drug_quantity "),
-                rst.getDouble("unit_price "),
-                rst.getDouble("unit_discount"),
-                rst.getString("supply_id"),
-                rst.getString("description")
+                rst.getInt("drug_quantity"),
+                rst.getDouble("unit_price"),
+                rst.getDouble("unit_discount")
         );
     }
 
@@ -77,8 +72,8 @@ public class DrugsDAOImpl implements DrugsDAO {
                     rst.getString("batch_number"),
                     rst.getDate("MFD"),
                     rst.getDate("EXD"),
-                    rst.getInt("drug_quantity "),
-                    rst.getDouble("unit_price "),
+                    rst.getInt("drug_quantity"),
+                    rst.getDouble("unit_price"),
                     rst.getDouble("unit_discount"),
                     rst.getString("Supply_id"),
                     rst.getString("description")

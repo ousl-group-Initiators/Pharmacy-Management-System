@@ -19,7 +19,6 @@ import java.util.ArrayList;
 
 public class OrderBOImpl implements OrderBO {
 
-//    private final CustomerDAO customerDAO = (CustomerDAO) DAOFactory.getDAOFactory().getDAO(DAOFactory.DAOTypes.CUSTOMER);
     private final DrugsDAO drugsDAO = (DrugsDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.DRUGS);
     private final OrderDAO orderDAO = (OrderDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.ORDER);
     private final OrderDetailsDAO orderDetailsDAO= (OrderDetailsDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.ORDERDETAILS);
@@ -114,14 +113,9 @@ public class OrderBOImpl implements OrderBO {
         return new DrugsDTO(
                 drugs.getDrug_id(),
                 drugs.getDrug_name(),
-                drugs.getBatch_number(),
-                drugs.getMFD(),
-                drugs.getEXD(),
                 drugs.getDrug_quantity(),
                 drugs.getUnit_price(),
-                drugs.getUnit_discount(),
-                drugs.getSupply_id(),
-                drugs.getDescription()
+                drugs.getUnit_discount()
         );
     }
 
