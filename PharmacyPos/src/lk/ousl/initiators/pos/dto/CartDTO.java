@@ -24,6 +24,15 @@ public class CartDTO {
         this.btn = btn;
     }
 
+    public CartDTO(String code, String description, double unitPrice, int qty, double discount, double total) {
+        this.code = code;
+        this.description = description;
+        this.unitPrice = unitPrice;
+        this.qty = qty;
+        this.discount = discount;
+        this.total = total;
+    }
+
     public String getCode() {
         return code;
     }
