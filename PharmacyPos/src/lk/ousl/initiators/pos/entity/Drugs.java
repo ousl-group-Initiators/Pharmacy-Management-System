@@ -29,9 +29,15 @@ public class Drugs {
         this.description = description;
     }
 
+    public Drugs(String drug_id, String drug_name, int drug_quantity, double unit_price, double unit_discount) {
+        this.drug_id = drug_id;
+        this.drug_name = drug_name;
+        this.drug_quantity = drug_quantity;
+        this.unit_price = unit_price;
+        this.unit_discount = unit_discount;
+    }
 
     public String getDrug_id() {
-
         return drug_id;
     }
 
