@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="contactUsContext" prefHeight="550.0" prefWidth="500.0" style="-fx-background-color: #f0f0ff;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ousl.initiators.pos.controller.ContactUsController">
+   <children>
+      <Label layoutX="158.0" layoutY="29.0" styleClass="heading" stylesheets="@../../../../../assets/css/Styles.css" text="CONTACT US" textFill="#1c0079" />
+      <Label layoutX="131.0" layoutY="74.0" styleClass="normal_font" stylesheets="@../../../../../assets/css/Styles.css" text="Contact us for the system creators" />
+      <Label layoutX="41.0" layoutY="244.0" styleClass="normal_font" stylesheets="@../../../../../assets/css/Styles.css" text="Team Name : Initiators">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="41.0" layoutY="290.0" prefWidth="345.0" styleClass="normal_font" stylesheets="@../../../../../assets/css/Styles.css" text="Team Members : K H S N Udayanga - S92067840" />
+      <Label layoutX="164.0" layoutY="318.0" prefHeight="25.0" prefWidth="233.0" styleClass="normal_font" stylesheets="@../../../../../assets/css/Styles.css" text="S M M Nimanthika - S92066755" />
+      <Label layoutX="165.0" layoutY="347.0" prefHeight="25.0" prefWidth="233.0" styleClass="normal_font" stylesheets="@../../../../../assets/css/Styles.css" text="H I M Rathnasiri - S92064581" />
+      <Label layoutX="166.0" layoutY="378.0" prefHeight="25.0" prefWidth="233.0" styleClass="normal_font" stylesheets="@../../../../../assets/css/Styles.css" text="K A T E Jayathissa - S92063005" />
+      <Label layoutX="41.0" layoutY="433.0" prefHeight="25.0" prefWidth="420.0" styleClass="normal_font" stylesheets="@../../../../../assets/css/Styles.css" text="E-Mail : shihannuwanjith@gmail.com / s92067840@ousl.lk" />
+      <Label layoutX="41.0" layoutY="487.0" prefHeight="25.0" prefWidth="420.0" styleClass="normal_font" stylesheets="@../../../../../assets/css/Styles.css" text="Telephone : 077 3381841 / 070 2544110" />
+      <ImageView fitHeight="100.0" fitWidth="150.0" layoutX="200.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../assets/images/contactDetails.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
