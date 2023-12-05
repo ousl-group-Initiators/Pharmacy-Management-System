@@ -30,6 +30,7 @@ public class DBConnection {
         return connection;
     }
 
+
     public static ArrayList<JobRoleDTO> jobRoleDTOS = new ArrayList<>();
 
     static {
@@ -57,5 +58,12 @@ public class DBConnection {
         paymentMethodDTOS.add(new PaymentMethodDTO(1,"Cash"));
         paymentMethodDTOS.add(new PaymentMethodDTO(2,"Credit Card"));
         paymentMethodDTOS.add(new PaymentMethodDTO(3,"Debit Card"));
+    }
+
+    public static ArrayList<JobRoleDTO> registrationDTOS = new ArrayList<>();
+
+    static {
+        registrationDTOS.add(new JobRoleDTO(1,"Admin"));
+        registrationDTOS.add(new JobRoleDTO(2,"Cashier"));
     }
 }
