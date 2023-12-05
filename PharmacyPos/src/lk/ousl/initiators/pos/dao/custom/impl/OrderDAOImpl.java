@@ -69,7 +69,7 @@ public class OrderDAOImpl implements OrderDAO {
 
     @Override
     public String generateNewOrderId() throws SQLException, ClassNotFoundException {
-        ResultSet rst = CrudUtil.executeQuery("SELECT invoice_number FROM `Order` ORDER BY invoice_number DESC LIMIT 1");
-        return rst.next() ? String.format("OD%03d",(Integer.parseInt(rst.getString(" ").replace(" ",""))+1)):"00001";
+        ResultSet rst = CrudUtil.executeQuery("SELECT invoice_number FROM `Order` ORDER BY invoice_number DESC LIMIT 1;");
+        return rst.next() ? String.format("INV%05d", (Integer.parseInt(rst.getString("invoice_number").replace("INV", "")) + 1)) : "INV00001";
     }
 }
