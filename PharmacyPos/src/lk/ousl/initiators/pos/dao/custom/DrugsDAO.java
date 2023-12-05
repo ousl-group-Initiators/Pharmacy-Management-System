@@ -10,4 +10,5 @@ import java.util.ArrayList;
 public interface DrugsDAO extends CrudDAO<Drugs,String> {
     boolean ifDrugsExist(String id) throws SQLException, ClassNotFoundException;
     public ArrayList<Drugs> searchDrugs (String searchText) throws SQLException, ClassNotFoundException;
+    boolean updated(Drugs drugs) throws SQLException, ClassNotFoundException;
 }
