@@ -262,6 +262,11 @@ public class BillingDashboardController {
 
     private void calculateBalance(){
         try {
+            // Check if cash and total amount labels are not empty
+            if (txtCash.getText().isEmpty() || lblTotalAmount.getText().isEmpty()) {
+                throw new NumberFormatException();
+            }
+
             // Get total amount from label
             BigDecimal totalAmount = new BigDecimal(lblTotalAmount.getText());
 
@@ -269,6 +274,7 @@ public class BillingDashboardController {
             BigDecimal cash = new BigDecimal(txtCash.getText().trim());
 
             // Calculate balance
+//            BigDecimal balance = cash.subtract(totalAmount);
             BigDecimal balance = cash.subtract(totalAmount);
 
             // Set the balance in the label
@@ -276,28 +282,60 @@ public class BillingDashboardController {
 
         } catch (NumberFormatException e) {
             // Handle invalid input
+            lblBalance.setText("Invalid Input");
             new Alert(Alert.AlertType.ERROR, "Invalid Cash or Total Amount").show();
         }
     }
 
     public void btnPlaceOrderOnAction(ActionEvent actionEvent) {
-//        calculateBalance();
-        boolean b = saveOrder(orderId,
-                lblCashierName.getText(),
-                java.sql.Date.valueOf(lblDate.getText()),
-                Time.valueOf(lblTime.getText()),
-                Double.parseDouble(lblTotalAmount.getText()),
-                tblBillingTable.getItems().stream().map(cartDTO -> new OrderDetailsDTO(orderId,
-                        cartDTO.getCode(),
-                        cartDTO.getDescription(),
-                        cartDTO.getUnitPrice(),
-                        cartDTO.getQty(),
-                        cartDTO.getDiscount(),
-                        cartDTO.getTotal())).collect(Collectors.toList()));
-        if (b) {
-            new Alert(Alert.AlertType.INFORMATION, "Successfully Done").show();
-        } else {
-            new Alert(Alert.AlertType.ERROR, "Try Again").show();
+        try {
+            // Check if cash is entered
+            if (txtCash.getText().isEmpty()) {
+                new Alert(Alert.AlertType.ERROR, "Please enter cash amount").show();
+                return; // Exit the method if cash is not entered
+            }
+
+            // Calculate balance
+            calculateBalance();
+
+            // Continue with placing the order
+            boolean success = saveOrder(orderId,
+                    lblCashierName.getText(),
+                    java.sql.Date.valueOf(lblDate.getText()),
+                    Time.valueOf(lblTime.getText()),
+                    Double.parseDouble(lblTotalAmount.getText()),
+                    tblBillingTable.getItems().stream().map(cartDTO -> new OrderDetailsDTO(orderId,
+                            cartDTO.getCode(),
+                            cartDTO.getDescription(),
+                            cartDTO.getUnitPrice(),
+                            cartDTO.getQty(),
+                            cartDTO.getDiscount(),
+                            cartDTO.getTotal())).collect(Collectors.toList()));
+
+            if (success) {
+                new Alert(Alert.AlertType.INFORMATION, "Successfully Done").show();
+                btnCancelOrderOnAction(actionEvent);
+            } else {
+                new Alert(Alert.AlertType.ERROR, "Try Again").show();
+            }
+            // Reset UI components
+            orderId = generateNewOrderId();
+            lblInvoiceNo.setText(" " + orderId);
+            cmbItemCode.getSelectionModel().clearSelection();
+            lblDescription.clear();
+            lblUnitPrice.clear();
+            lblQtyOnHand.clear();
+            lblDiscount.clear();
+            txtQty.clear();
+            lblTotal.setText("00.00");
+            lblTotalAmount.setText("00.00");
+            txtCash.clear();
+            lblBalance.setText("00.00");
+            cmbItemCode.setDisable(false);
+            tblBillingTable.getItems().clear();
+        }catch (NumberFormatException e) {
+            // Handle invalid input
+            new Alert(Alert.AlertType.ERROR, "Invalid Total Amount or Cash").show();
         }
     }
 

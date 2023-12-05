@@ -51,8 +51,8 @@ public class OrderBOImpl implements OrderBO {
 
         for (OrderDetailsDTO orderDetailsDTO : dto.getOrderDetails()){
             OrderDetails orderDetails = new OrderDetails(
-                    orderDetailsDTO.getDrug_id(),
                     orderDetailsDTO.getInvoice_number(),
+                    orderDetailsDTO.getDrug_id(),
                     orderDetailsDTO.getDescription(),
                     orderDetailsDTO.getUnitPrice(),
                     orderDetailsDTO.getQty(),
@@ -68,7 +68,7 @@ public class OrderBOImpl implements OrderBO {
 
             Drugs search = drugsDAO.search(orderDetailsDTO.getDrug_id());
             search.setDrug_quantity(search.getDrug_quantity() - orderDetailsDTO.getQty());
-            boolean update = drugsDAO.update(search);
+            boolean update = drugsDAO.updated(search);
             if (!update){
                 connection.rollback();
                 connection.setAutoCommit(true);
@@ -108,6 +108,21 @@ public class OrderBOImpl implements OrderBO {
     }
 
     @Override
+    public ArrayList<OrderDTO> getAllOrders() throws SQLException, ClassNotFoundException {
+        ArrayList<OrderDTO> allOrders = new ArrayList<>();
+        ArrayList<Orders> all = orderDAO.getAll();
+        for (Orders orders : all) {
+            allOrders.add(new OrderDTO(
+                    orders.getInvoice_number(),
+                    orders.getCashier_name(),
+                    orders.getDate(),
+                    orders.getTime(),
+                    orders.getTotal()));
+        }
+        return allOrders;
+    }
+
+    @Override
     public DrugsDTO searchDrugs(String code) throws SQLException, ClassNotFoundException {
         Drugs drugs = drugsDAO.search(code);
         return new DrugsDTO(
@@ -122,5 +137,18 @@ public class OrderBOImpl implements OrderBO {
     @Override
     public boolean ifDrugsExist(String code) throws SQLException, ClassNotFoundException {
         return drugsDAO.ifDrugsExist(code);
+    }
+
+    @Override
+    public OrderDTO searchOrder(String id) throws SQLException, ClassNotFoundException {
+//        Orders orders = orderDAO.search(id);
+//        return new DrugsDTO(
+//                orders.getInvoice_number(),
+//                orders.getCashier_name(),
+//                orders.getDate(),
+//                orders.getTime(),
+//                orders.getTotal()
+//        );
+        return null;
     }
 }

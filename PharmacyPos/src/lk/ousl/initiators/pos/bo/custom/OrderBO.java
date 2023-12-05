@@ -14,13 +14,11 @@ public interface OrderBO extends SuperBO {
 
     ArrayList<DrugsDTO> getAllItems()throws SQLException, ClassNotFoundException;
 
-//    ArrayList<ItemDTO> getAllOrders() throws SQLException, ClassNotFoundException;
+    ArrayList<OrderDTO> getAllOrders() throws SQLException, ClassNotFoundException;
 
     DrugsDTO searchDrugs(String code)throws SQLException, ClassNotFoundException;
 
     boolean ifDrugsExist(String code) throws SQLException, ClassNotFoundException;
 
-//    boolean ifItemExist(String id) throws SQLException, ClassNotFoundException;
-
-//    ItemDTO searchCustomer(String s)throws SQLException, ClassNotFoundException;
+    OrderDTO searchOrder(String id) throws SQLException, ClassNotFoundException;
 }

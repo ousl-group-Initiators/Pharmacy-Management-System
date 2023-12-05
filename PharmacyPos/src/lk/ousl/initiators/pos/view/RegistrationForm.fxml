@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.Cursor?>
@@ -22,21 +23,17 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXPasswordField>
-      <JFXButton layoutX="369.0" layoutY="373.0" onAction="#RegisterOnAction" prefHeight="40.0" prefWidth="280.0" style="-fx-background-color: #2f536b;" styleClass="addButton" stylesheets="@../../../../../assets/css/Styles.css" text="Register" textFill="WHITE" />
+      <JFXButton fx:id="btnRegistration" layoutX="369.0" layoutY="373.0" onAction="#RegisterOnAction" prefHeight="40.0" prefWidth="280.0" style="-fx-background-color: #2f536b;" styleClass="addButton" stylesheets="@../../../../../assets/css/Styles.css" text="Register" textFill="WHITE" />
       <ImageView fitHeight="450.0" fitWidth="356.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../assets/images/loginUi.png" />
          </image>
       </ImageView>
-      <JFXTextField fx:id="txtConfirmPassword" focusColor="#419043" labelFloat="true" layoutX="369.0" layoutY="227.0" prefHeight="35.0" prefWidth="280.0" promptText="confirm password" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </JFXTextField>
-      <JFXPasswordField fx:id="txtJobRole" focusColor="#419043" labelFloat="true" layoutX="369.0" layoutY="288.0" prefHeight="35.0" prefWidth="280.0" promptText="job role" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css">
+      <JFXPasswordField fx:id="txtConfirmPassword" focusColor="#419043" labelFloat="true" layoutX="369.0" layoutY="225.0" prefHeight="35.0" prefWidth="280.0" promptText="confirm password" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXPasswordField>
+      <JFXComboBox fx:id="cmbJobRole" layoutX="369.0" layoutY="298.0" prefHeight="25.0" prefWidth="280.0" promptText="select job role" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
    </children>
 </AnchorPane>

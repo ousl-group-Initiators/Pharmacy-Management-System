@@ -111,4 +111,15 @@ public class DrugsDAOImpl implements DrugsDAO {
         }
         return drugsList;
     }
+
+    @Override
+    public boolean updated(Drugs drugs) throws SQLException, ClassNotFoundException {
+        return CrudUtil.executeUpdate("UPDATE Drugs SET drug_name=?, drug_quantity=?, unit_price=?, unit_discount=? WHERE drug_id=?",
+                drugs.getDrug_name(),
+                drugs.getDrug_quantity(),
+                drugs.getUnit_price(),
+                drugs.getUnit_discount(),
+                drugs.getDrug_id()
+        );
+    }
 }
