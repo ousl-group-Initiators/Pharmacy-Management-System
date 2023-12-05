@@ -34,6 +34,23 @@ public class OrderDTO {
         this.orderDetails = orderDetails;
     }
 
+    public OrderDTO(String invoice_number, String cashier_name, Date date, Time time, double total, Button button) {
+        this.invoice_number = invoice_number;
+        this.cashier_name = cashier_name;
+        this.date = date;
+        this.time = time;
+        this.total = total;
+        this.button = button;
+    }
+
+    public OrderDTO(String invoice_number, String cashier_name, Date date, Time time, double total) {
+        this.invoice_number = invoice_number;
+        this.cashier_name = cashier_name;
+        this.date = date;
+        this.time = time;
+        this.total = total;
+    }
+
     public String getInvoice_number() {
         return invoice_number;
     }
