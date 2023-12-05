@@ -1,8 +1,8 @@
 package lk.ousl.initiators.pos.entity;
 
 public class OrderDetails {
-    private String drug_id;
     private String invoice_number;
+    private String drug_id;
     private String description;
     private double unitPrice;
     private int qty;
@@ -12,22 +12,14 @@ public class OrderDetails {
     public OrderDetails() {
     }
 
-    public OrderDetails(String drug_id, String invoice_number, String description, double unitPrice, int qty, double discount, double total) {
-        this.drug_id = drug_id;
+    public OrderDetails(String invoice_number, String drug_id, String description, double unitPrice, int qty, double discount, double total) {
         this.invoice_number = invoice_number;
+        this.drug_id = drug_id;
         this.description = description;
         this.unitPrice = unitPrice;
         this.qty = qty;
         this.discount = discount;
         this.total = total;
-    }
-
-    public String getDrug_id() {
-        return drug_id;
-    }
-
-    public void setDrug_id(String drug_id) {
-        this.drug_id = drug_id;
     }
 
     public String getInvoice_number() {
@@ -36,6 +28,14 @@ public class OrderDetails {
 
     public void setInvoice_number(String invoice_number) {
         this.invoice_number = invoice_number;
+    }
+
+    public String getDrug_id() {
+        return drug_id;
+    }
+
+    public void setDrug_id(String drug_id) {
+        this.drug_id = drug_id;
     }
 
     public String getDescription() {
@@ -81,8 +81,8 @@ public class OrderDetails {
     @Override
     public String toString() {
         return "OrderDetails{" +
-                "drug_id='" + drug_id + '\'' +
                 ", invoice_number='" + invoice_number + '\'' +
+                "drug_id='" + drug_id + '\'' +
                 ", description='" + description + '\'' +
                 ", unitPrice=" + unitPrice +
                 ", qty=" + qty +
