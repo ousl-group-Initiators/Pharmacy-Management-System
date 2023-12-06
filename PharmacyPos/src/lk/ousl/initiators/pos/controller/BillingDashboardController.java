@@ -296,7 +296,7 @@ public class BillingDashboardController {
             }
 
             // Calculate balance
-            calculateBalance();
+//            calculateBalance();
 
             // Continue with placing the order
             boolean success = saveOrder(orderId,

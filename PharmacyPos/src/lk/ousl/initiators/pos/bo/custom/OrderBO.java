@@ -2,6 +2,7 @@ package lk.ousl.initiators.pos.bo.custom;
 
 import lk.ousl.initiators.pos.bo.SuperBO;
 import lk.ousl.initiators.pos.dto.DrugsDTO;
+import lk.ousl.initiators.pos.dto.EmployeeDTO;
 import lk.ousl.initiators.pos.dto.OrderDTO;
 
 import java.sql.SQLException;
@@ -20,5 +21,6 @@ public interface OrderBO extends SuperBO {
 
     boolean ifDrugsExist(String code) throws SQLException, ClassNotFoundException;
 
-    OrderDTO searchOrder(String id) throws SQLException, ClassNotFoundException;
+//    OrderDTO searchOrder(String id) throws SQLException, ClassNotFoundException;
+    ArrayList<OrderDTO> searchOrder(String searchText) throws SQLException, ClassNotFoundException;
 }

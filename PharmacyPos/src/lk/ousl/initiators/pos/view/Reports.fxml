@@ -28,7 +28,7 @@
             <Label fx:id="lblDate" layoutX="95.0" layoutY="93.0" styleClass="DateLabel" stylesheets="@../../../../../assets/css/Styles.css" text="2023-11-20" />
             <Label layoutX="150.0" layoutY="159.0" styleClass="total" stylesheets="@../../../../../assets/css/Styles.css" text="Rs." />
             <Label fx:id="lblDailySalesTotal" layoutX="203.0" layoutY="159.0" styleClass="total" stylesheets="@../../../../../assets/css/Styles.css" text="00.00" />
-            <JFXButton layoutX="150.0" layoutY="234.0" onAction="#btnViewDailySalesOnAction" prefHeight="40.0" prefWidth="150.0" styleClass="addButton" stylesheets="@../../../../../assets/css/Styles.css" text="View Daily Sales" textFill="WHITE" />
+            <JFXButton fx:id="btnViewDailySales" layoutX="150.0" layoutY="234.0" onAction="#btnViewDailySalesOnAction" prefHeight="40.0" prefWidth="150.0" styleClass="addButton" stylesheets="@../../../../../assets/css/Styles.css" text="View Daily Sales" textFill="WHITE" />
          </children>
       </Pane>
       <Pane layoutX="577.0" layoutY="84.0" prefHeight="290.0" prefWidth="450.0" style="-fx-background-color: #F0F0F0;">

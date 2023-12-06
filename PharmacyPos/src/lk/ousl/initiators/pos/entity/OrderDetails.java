@@ -22,6 +22,15 @@ public class OrderDetails {
         this.total = total;
     }
 
+    public OrderDetails(String drug_id, String description, double unitPrice, int qty, double discount, double total) {
+        this.drug_id = drug_id;
+        this.description = description;
+        this.unitPrice = unitPrice;
+        this.qty = qty;
+        this.discount = discount;
+        this.total = total;
+    }
+
     public String getInvoice_number() {
         return invoice_number;
     }
