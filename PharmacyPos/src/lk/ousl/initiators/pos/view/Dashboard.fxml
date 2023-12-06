@@ -26,14 +26,14 @@
       </Pane>
       <Pane layoutX="20.0" layoutY="100.0" prefHeight="180.0" prefWidth="250.0" styleClass="dashboard_pane1" stylesheets="@../../../../../assets/css/Styles.css">
          <children>
-            <Label layoutX="20.0" layoutY="15.0" styleClass="billing_dashboard_numbers" stylesheets="@../../../../../assets/css/Styles.css" text="01" textFill="#d00000" />
+            <Label fx:id="lblExpireDrugs" layoutX="20.0" layoutY="15.0" styleClass="billing_dashboard_numbers" stylesheets="@../../../../../assets/css/Styles.css" text="01" textFill="#d00000" />
             <Label layoutX="20.0" layoutY="80.0" styleClass="font" stylesheets="@../../../../../assets/css/Styles.css" text="Expired Drugs" />
             <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="175.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../assets/images/ExpiredDrug.png" />
                </image>
             </ImageView>
-            <JFXButton fx:id="btnMangeDrugs" layoutX="2.0" layoutY="134.0" onAction="#manageDrugsOnAction" prefHeight="40.0" prefWidth="246.0" styleClass="dashboard_pane_button" stylesheets="@../../../../../assets/css/Styles.css" text="Manage Drugs --&gt;">
+            <JFXButton fx:id="btnMangeDrugs" layoutX="2.0" layoutY="132.0" onAction="#manageDrugsOnAction" prefHeight="40.0" prefWidth="246.0" styleClass="dashboard_pane_button" stylesheets="@../../../../../assets/css/Styles.css" text="Manage Drugs --&gt;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -42,14 +42,14 @@
       </Pane>
       <Pane layoutX="288.0" layoutY="100.0" prefHeight="180.0" prefWidth="250.0" styleClass="dashboard_pane1" stylesheets="@../../../../../assets/css/Styles.css">
          <children>
-            <Label layoutX="20.0" layoutY="13.0" styleClass="billing_dashboard_numbers" stylesheets="@../../../../../assets/css/Styles.css" text="06" textFill="#d00000" />
+            <Label fx:id="lblDrugOutOfStock" layoutX="20.0" layoutY="13.0" styleClass="billing_dashboard_numbers" stylesheets="@../../../../../assets/css/Styles.css" text="06" textFill="#d00000" />
             <Label layoutX="20.0" layoutY="78.0" styleClass="font" stylesheets="@../../../../../assets/css/Styles.css" text="Drug Out of Stock" />
             <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="175.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../assets/images/DrugOutOfStock.png" />
                </image>
             </ImageView>
-            <JFXButton layoutX="2.0" layoutY="132.0" prefHeight="40.0" prefWidth="246.0" styleClass="dashboard_pane_button" stylesheets="@../../../../../assets/css/Styles.css" text="Manage Drugs --&gt;">
+            <JFXButton layoutX="2.0" layoutY="132.0" onAction="#manageDrugsOnAction02" prefHeight="40.0" prefWidth="246.0" styleClass="dashboard_pane_button" stylesheets="@../../../../../assets/css/Styles.css" text="Manage Drugs --&gt;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -58,7 +58,7 @@
       </Pane>
       <Pane layoutX="554.0" layoutY="100.0" prefHeight="180.0" prefWidth="250.0" styleClass="dashboard_pane1" stylesheets="@../../../../../assets/css/Styles.css">
          <children>
-            <Label layoutX="20.0" layoutY="13.0" styleClass="billing_dashboard_numbers" stylesheets="@../../../../../assets/css/Styles.css" text="02" textFill="#d00000" />
+            <Label fx:id="lblExpiredItems" layoutX="20.0" layoutY="13.0" styleClass="billing_dashboard_numbers" stylesheets="@../../../../../assets/css/Styles.css" text="02" textFill="#d00000" />
             <Label layoutX="20.0" layoutY="78.0" styleClass="font" stylesheets="@../../../../../assets/css/Styles.css" text="Expired Items" />
             <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="183.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -74,14 +74,14 @@
       </Pane>
       <Pane layoutX="820.0" layoutY="100.0" prefHeight="180.0" prefWidth="250.0" styleClass="dashboard_pane1" stylesheets="@../../../../../assets/css/Styles.css">
          <children>
-            <Label layoutX="20.0" layoutY="11.0" styleClass="billing_dashboard_numbers" stylesheets="@../../../../../assets/css/Styles.css" text="06" textFill="#d00000" />
+            <Label fx:id="lblItemOutOfStock" layoutX="20.0" layoutY="11.0" styleClass="billing_dashboard_numbers" stylesheets="@../../../../../assets/css/Styles.css" text="06" textFill="#d00000" />
             <Label layoutX="20.0" layoutY="76.0" styleClass="font" stylesheets="@../../../../../assets/css/Styles.css" text="Item Out of Stock" />
             <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="175.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../assets/images/ItemOutOfStock.png" />
                </image>
             </ImageView>
-            <JFXButton layoutX="2.0" layoutY="130.0" prefHeight="40.0" prefWidth="246.0" styleClass="dashboard_pane_button" stylesheets="@../../../../../assets/css/Styles.css" text="Manage Items --&gt;">
+            <JFXButton layoutX="2.0" layoutY="130.0" onAction="#manageItemOnAction02" prefHeight="40.0" prefWidth="246.0" styleClass="dashboard_pane_button" stylesheets="@../../../../../assets/css/Styles.css" text="Manage Items --&gt;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -90,14 +90,14 @@
       </Pane>
       <Pane layoutX="20.0" layoutY="314.0" prefHeight="180.0" prefWidth="250.0" styleClass="dashboard_pane" stylesheets="@../../../../../assets/css/Styles.css">
          <children>
-            <Label layoutX="20.0" layoutY="13.0" styleClass="billing_dashboard_numbers" stylesheets="@../../../../../assets/css/Styles.css" text="55" textFill="#088b00" />
+            <Label fx:id="lblStockedDrugs" layoutX="20.0" layoutY="13.0" styleClass="billing_dashboard_numbers" stylesheets="@../../../../../assets/css/Styles.css" text="55" textFill="#088b00" />
             <Label layoutX="20.0" layoutY="78.0" styleClass="font" stylesheets="@../../../../../assets/css/Styles.css" text="Stocked Drugs" />
             <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="185.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../assets/images/StockedDrugs.png" />
                </image>
             </ImageView>
-            <JFXButton layoutX="2.0" layoutY="132.0" prefHeight="40.0" prefWidth="246.0" styleClass="dashboard_pane_button" stylesheets="@../../../../../assets/css/Styles.css" text="Manage Drugs --&gt;">
+            <JFXButton layoutX="2.0" layoutY="132.0" onAction="#manageDrugsOnAction03" prefHeight="40.0" prefWidth="246.0" styleClass="dashboard_pane_button" stylesheets="@../../../../../assets/css/Styles.css" text="Manage Drugs --&gt;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -106,14 +106,14 @@
       </Pane>
       <Pane layoutX="286.0" layoutY="314.0" prefHeight="180.0" prefWidth="250.0" styleClass="dashboard_pane" stylesheets="@../../../../../assets/css/Styles.css">
          <children>
-            <Label layoutX="20.0" layoutY="13.0" styleClass="billing_dashboard_numbers" stylesheets="@../../../../../assets/css/Styles.css" text="25" textFill="#088b00" />
+            <Label fx:id="lblStockedItems" layoutX="20.0" layoutY="13.0" styleClass="billing_dashboard_numbers" stylesheets="@../../../../../assets/css/Styles.css" text="25" textFill="#088b00" />
             <Label layoutX="20.0" layoutY="78.0" styleClass="font" stylesheets="@../../../../../assets/css/Styles.css" text="Stocked Items" />
             <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="185.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../assets/images/StokedItems.png" />
                </image>
             </ImageView>
-            <JFXButton layoutX="2.0" layoutY="132.0" prefHeight="40.0" prefWidth="246.0" styleClass="dashboard_pane_button" stylesheets="@../../../../../assets/css/Styles.css" text="Manage Items --&gt;">
+            <JFXButton layoutX="2.0" layoutY="132.0" onAction="#manageItemOnAction03" prefHeight="40.0" prefWidth="246.0" styleClass="dashboard_pane_button" stylesheets="@../../../../../assets/css/Styles.css" text="Manage Items --&gt;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -122,14 +122,14 @@
       </Pane>
       <Pane layoutX="554.0" layoutY="314.0" prefHeight="180.0" prefWidth="250.0" styleClass="dashboard_pane2" stylesheets="@../../../../../assets/css/Styles.css">
          <children>
-            <Label layoutX="20.0" layoutY="13.0" styleClass="billing_dashboard_numbers" stylesheets="@../../../../../assets/css/Styles.css" text="03" textFill="#2f5a9a" />
+            <Label fx:id="lblTotalEmployee" layoutX="20.0" layoutY="13.0" styleClass="billing_dashboard_numbers" stylesheets="@../../../../../assets/css/Styles.css" text="03" textFill="#2f5a9a" />
             <Label layoutX="20.0" layoutY="78.0" styleClass="font" stylesheets="@../../../../../assets/css/Styles.css" text="Total Employees" />
             <ImageView fitHeight="65.0" fitWidth="65.0" layoutX="172.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../assets/images/Employees.png" />
                </image>
             </ImageView>
-            <JFXButton layoutX="2.0" layoutY="132.0" prefHeight="40.0" prefWidth="246.0" styleClass="dashboard_pane_button" stylesheets="@../../../../../assets/css/Styles.css" text="Manage Employees --&gt;">
+            <JFXButton fx:id="btnManageEmployee" layoutX="2.0" layoutY="132.0" onAction="#ManageEmployeeOnAction" prefHeight="40.0" prefWidth="246.0" styleClass="dashboard_pane_button" stylesheets="@../../../../../assets/css/Styles.css" text="Manage Employees --&gt;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -138,21 +138,21 @@
       </Pane>
       <Pane layoutX="824.0" layoutY="314.0" prefHeight="180.0" prefWidth="250.0" styleClass="dashboard_pane2" stylesheets="@../../../../../assets/css/Styles.css">
          <children>
-            <Label layoutX="20.0" layoutY="12.0" styleClass="billing_dashboard_numbers" stylesheets="@../../../../../assets/css/Styles.css" text="05" textFill="#2f5a9a" />
+            <Label fx:id="lblTotalSuppliers" layoutX="20.0" layoutY="12.0" styleClass="billing_dashboard_numbers" stylesheets="@../../../../../assets/css/Styles.css" text="05" textFill="#2f5a9a" />
             <Label layoutX="20.0" layoutY="77.0" styleClass="font" stylesheets="@../../../../../assets/css/Styles.css" text="Total Suppliers" />
             <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="175.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../../assets/images/Suppliers.png" />
                </image>
             </ImageView>
-            <JFXButton layoutX="2.0" layoutY="131.0" prefHeight="40.0" prefWidth="246.0" styleClass="dashboard_pane_button" stylesheets="@../../../../../assets/css/Styles.css" text="Manage Suppliers --&gt;">
+            <JFXButton fx:id="btnManageSupplier" layoutX="2.0" layoutY="131.0" onAction="#ManageSupplierOnAction" prefHeight="40.0" prefWidth="246.0" styleClass="dashboard_pane_button" stylesheets="@../../../../../assets/css/Styles.css" text="Manage Suppliers --&gt;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
          </children>
       </Pane>
-      <JFXButton layoutX="804.0" layoutY="613.0" onAction="#viewBillingDashboardOnAction" prefHeight="46.0" prefWidth="271.0" styleClass="billing_dashboard_button" stylesheets="@../../../../../assets/css/Styles.css" text="View Billing Dashboard" textFill="WHITE">
+      <JFXButton disable="true" layoutX="804.0" layoutY="613.0" onAction="#viewBillingDashboardOnAction" prefHeight="46.0" prefWidth="271.0" styleClass="billing_dashboard_button" stylesheets="@../../../../../assets/css/Styles.css" text="View Billing Dashboard" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
