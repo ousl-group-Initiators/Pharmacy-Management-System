@@ -7,9 +7,11 @@ import lk.ousl.initiators.pos.dao.custom.OrderDAO;
 import lk.ousl.initiators.pos.dao.custom.OrderDetailsDAO;
 import lk.ousl.initiators.pos.db.DBConnection;
 import lk.ousl.initiators.pos.dto.DrugsDTO;
+import lk.ousl.initiators.pos.dto.EmployeeDTO;
 import lk.ousl.initiators.pos.dto.OrderDTO;
 import lk.ousl.initiators.pos.dto.OrderDetailsDTO;
 import lk.ousl.initiators.pos.entity.Drugs;
+import lk.ousl.initiators.pos.entity.Employee;
 import lk.ousl.initiators.pos.entity.OrderDetails;
 import lk.ousl.initiators.pos.entity.Orders;
 
@@ -140,15 +142,21 @@ public class OrderBOImpl implements OrderBO {
     }
 
     @Override
-    public OrderDTO searchOrder(String id) throws SQLException, ClassNotFoundException {
-//        Orders orders = orderDAO.search(id);
-//        return new DrugsDTO(
-//                orders.getInvoice_number(),
-//                orders.getCashier_name(),
-//                orders.getDate(),
-//                orders.getTime(),
-//                orders.getTotal()
-//        );
-        return null;
+    public ArrayList<OrderDTO> searchOrder(String searchText) throws SQLException, ClassNotFoundException {
+        ArrayList<Orders> entityCustomerList = orderDAO.searchOrders(searchText);
+        ArrayList<OrderDTO> orderDTOList = new ArrayList<>();
+
+        for(Orders orders: entityCustomerList){
+            OrderDTO orderDTO= new OrderDTO(
+                    orders.getInvoice_number(),
+                    orders.getCashier_name(),
+                    orders.getDate(),
+                    orders.getTime(),
+                    orders.getTotal()
+            );
+            orderDTOList.add(orderDTO);
+        }
+        return orderDTOList;
     }
+
 }

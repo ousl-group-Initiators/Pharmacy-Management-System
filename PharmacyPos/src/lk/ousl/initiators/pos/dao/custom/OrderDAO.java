@@ -10,4 +10,5 @@ import java.util.ArrayList;
 public interface OrderDAO extends CrudDAO<Orders, String> {
     boolean ifOrderExist(String oid) throws SQLException, ClassNotFoundException;
     String generateNewOrderId() throws SQLException, ClassNotFoundException;
+    public ArrayList<Orders> searchOrders (String searchText) throws SQLException, ClassNotFoundException;
 }

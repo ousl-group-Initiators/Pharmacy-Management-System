@@ -72,4 +72,24 @@ public class OrderDAOImpl implements OrderDAO {
         ResultSet rst = CrudUtil.executeQuery("SELECT invoice_number FROM `Order` ORDER BY invoice_number DESC LIMIT 1;");
         return rst.next() ? String.format("INV%05d", (Integer.parseInt(rst.getString("invoice_number").replace("INV", "")) + 1)) : "INV00001";
     }
+
+    @Override
+    public ArrayList<Orders> searchOrders(String searchText) throws SQLException, ClassNotFoundException {
+        String sql = "SELECT * FROM `Order` WHERE invoice_number LIKE ?";
+        ResultSet set = CrudUtil.executeQuery(sql,searchText);
+
+        ArrayList<Orders> orderList = new ArrayList<>();
+
+        while (set.next()){
+            Orders orders = new Orders(
+                    set.getString("invoice_number"),
+                    set.getString("cashier_name"),
+                    set.getDate("date"),
+                    set.getTime("time"),
+                    set.getDouble("total")
+            );
+            orderList.add(orders);
+        }
+        return orderList;
+    }
 }
