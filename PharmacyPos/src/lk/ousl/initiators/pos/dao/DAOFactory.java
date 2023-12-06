@@ -20,7 +20,7 @@ public class DAOFactory {
     }
 
     public enum DAOTypes{
-        EMPLOYEE,SUPPLIER,DRUGS,LOGIN,ORDER,ORDERDETAILS,REGISTRATION
+        EMPLOYEE,SUPPLIER,DRUGS,LOGIN,ORDER,ORDERDETAILS,REGISTRATION,INVENTORY,REPORT,DASHBOARD
     }
 
     // factory method
@@ -40,6 +40,12 @@ public class DAOFactory {
                 return new OrderDetailsDAOImpl();
             case REGISTRATION:
                 return new RegistrationDAOImpl();
+            case INVENTORY:
+                return new InventoryDAOImpl();
+            case REPORT:
+                return new ReportsDAOImpl();
+            case DASHBOARD:
+                return new DashboardDAOImpl();
             default:
                 return null;
         }
