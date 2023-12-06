@@ -19,14 +19,14 @@
       </Pane>
       <TableView fx:id="tblInventory" layoutX="28.0" layoutY="167.0" prefHeight="507.0" prefWidth="1035.0">
          <columns>
-            <TableColumn fx:id="colName" prefWidth="268.0" text="Name" />
-            <TableColumn fx:id="colWeight" prefWidth="140.0" text="Weight" />
-            <TableColumn fx:id="colCategory" prefWidth="220.0" text="Category" />
-            <TableColumn fx:id="colPrice" minWidth="0.0" prefWidth="128.0" text="Price" />
-            <TableColumn fx:id="colStock" minWidth="0.0" prefWidth="135.0" text="Stock" />
-            <TableColumn fx:id="colStatus" minWidth="0.0" prefWidth="143.0" text="Status" />
+            <TableColumn fx:id="colItemCode" prefWidth="135.0" text="Item Code" />
+            <TableColumn fx:id="colName" prefWidth="313.0" text="Name" />
+            <TableColumn fx:id="colBatchNumber" prefWidth="143.0" text="Batch Number" />
+            <TableColumn fx:id="colUnitPrice" minWidth="0.0" prefWidth="147.0" text="Unit Price" />
+            <TableColumn fx:id="colDiscount" minWidth="0.0" prefWidth="153.0" text="Discount" />
+            <TableColumn fx:id="colStock" minWidth="0.0" prefWidth="143.0" text="Stock" />
          </columns>
       </TableView>
-      <TextField fx:id="txtSearch" layoutX="28.0" layoutY="93.0" prefHeight="40.0" prefWidth="1035.0" promptText="Search Inventroy" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
+      <TextField fx:id="txtSearch" layoutX="28.0" layoutY="93.0" onAction="#SearchOnAction" prefHeight="40.0" prefWidth="1035.0" promptText="Search Inventroy" styleClass="textField" stylesheets="@../../../../../assets/css/Styles.css" />
    </children>
 </AnchorPane>
