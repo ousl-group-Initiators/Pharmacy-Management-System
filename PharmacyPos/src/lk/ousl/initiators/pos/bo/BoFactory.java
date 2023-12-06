@@ -17,7 +17,7 @@ public class BoFactory {
     }
 
     public enum BoTypes{
-        Employee,Supplier,Drugs,LOGIN,ORDER,REGISTRATION
+        Employee,Supplier,Drugs,LOGIN,ORDER,REGISTRATION,ORDERDETAILS,INVENTORY,REPORT,DASHBOARD
     }
 
 
@@ -35,6 +35,14 @@ public class BoFactory {
                 return new OrderBOImpl();
             case REGISTRATION:
                 return new RegistrationBOImpl();
+            case ORDERDETAILS:
+                return new OrderDetailsBOImpl();
+            case INVENTORY:
+                return new InventoryBOImpl();
+            case REPORT:
+                return new ReportBOImpl();
+            case DASHBOARD:
+                return new DashboardBOImpl();
             default:
                 return null;
         }
